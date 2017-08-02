@@ -1,0 +1,6 @@
+{
+  "style": "static/css/build.css",
+  "style-custom": "static/css/custom.css",
+  "script": "static/js/build.js",
+  "script-custom": "static/js/custom.js"
+}

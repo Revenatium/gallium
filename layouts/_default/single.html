@@ -1,0 +1,17 @@
+{{ define "title" }}
+   {{ .Title | markdownify }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+   {{.Content}}
+   {{ if .Params.showRooms}}
+      {{ range where .Site.RegularPages "Type" "==" "rooms" }}
+         {{partial "room" . }}
+      {{ end }}
+   {{ end}}
+   {{ if .Params.showDeals}}
+      {{ range where .Site.RegularPages "Type" "==" "deals" }}
+         {{partial "deal" . }}
+      {{ end }}
+   {{ end}}
+{{ end }}

@@ -1,9 +1,9 @@
-<footer class="blog-footer">
+<footer class="footer">
    <p>
-   {{ if .Site.Copyright }}
-      {{ .Site.Copyright | markdownify }}
-   {{ else }}
-      Revenatium {{.Date.Year}}
-   {{ end }}
+      {{ if .Site.Copyright }}
+         {{ .Site.Copyright | markdownify }}
+      {{ else }}
+         Revenatium {{.Date.Year}}
+      {{ end }}
    </p>
 </footer>

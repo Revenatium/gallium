@@ -1,0 +1,29 @@
+{
+   "name": "aluminium",
+   "version": "1.0.0",
+   "description": "hugo theme",
+   "main": "index.js",
+   "scripts": {
+      "build:css": "node-sass --output-style expanded --precision 6 source/scss/main.scss static/css/build.css.tmp && cleancss --level 1 static/css/build.css.tmp -o static/css/build.css",
+      "build:fonts": "cp node_modules/font-awesome/fonts/* static/fonts",
+      "build:generatesri": "node build/sri.js > data/sri.toml",
+      "build": "npm run build:css && npm run build:fonts && npm run build:generatesri && npm run clean",
+      "clean": "rm static/css/build.css.tmp"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Revenatium/aluminium.git"
+   },
+   "author": "Revenatium",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/Revenatium/aluminium/issues"
+   },
+   "homepage": "https://github.com/Revenatium/aluminium#readme",
+   "dependencies": {
+      "bootstrap": "4.0.0-alpha.6",
+      "clean-css-cli": "^4.1.6",
+      "font-awesome": "^4.7.0",
+      "node-sass": "^4.5.3"
+   }
+}

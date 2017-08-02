@@ -24,15 +24,11 @@
 
       {{ partial "header.html" . }}
 
-      {{ partial ""navbar.html" . }}
+      {{ partial "navbar.html" . }}
 
-      <div class="row">
-         <div class="col-sm-12">
-            {{ block "main" . }}
-            <!-- The part of the page that begins to differ between templates -->
-            {{ end }}
-         </div>
-      </div>
+      {{ block "main" . }}
+      <!-- The part of the page that begins to differ between templates -->
+      {{ end }}
 
       {{ partial "footer.html" . }}
 

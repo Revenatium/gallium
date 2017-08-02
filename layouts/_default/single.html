@@ -3,15 +3,10 @@
 {{ end }}
 
 {{ define "main" }}
-   {{.Content}}
    {{ if .Params.showRooms}}
-      {{ range where .Site.RegularPages "Type" "==" "rooms" }}
-         {{partial "room" . }}
-      {{ end }}
+      {{ partial "rooms.html" . }}
    {{ end}}
    {{ if .Params.showDeals}}
-      {{ range where .Site.RegularPages "Type" "==" "deals" }}
-         {{partial "deal" . }}
-      {{ end }}
+      {{ partial "deals.html" . }}
    {{ end}}
 {{ end }}

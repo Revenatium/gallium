@@ -1,0 +1,5 @@
+<div class="row">
+   {{ range where .Site.RegularPages "Type" "==" "deals" }}
+      {{partial "deal" . }}
+   {{ end }}
+</div>

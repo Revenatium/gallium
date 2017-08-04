@@ -14,7 +14,7 @@
 
       {{ "<!-- combined, minified CSS -->" | safeHTML }}
       <link href="{{ .Site.BaseURL }}css/build.css" rel="stylesheet"{{ if not .Site.Params.disable_sri }} integrity="{{ .Site.Data.sri.style }}" crossorigin="anonymous"{{ end }}>
-      <link href="{{ .Site.BaseURL }}css/custom.css" rel="stylesheet"{{ if not .Site.Params.disable_sri }} integrity="{{ .Site.Data.sri.styleCustom }}" crossorigin="anonymous"{{ end }}>
+      <link href="{{ .Site.BaseURL }}css/custom.css" rel="stylesheet">
       {{ template "_internal/google_analytics_async.html" . }}
       {{ partial "head-custom.html" . }}
    </head>
@@ -33,5 +33,10 @@
       {{ partial "footer.html" . }}
 
       </div>
+      {{ with .Site.Params.bookerURL }}<script src="{{.}}"></script>{{ end }}
+      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+      <script src="{{.Site.BaseURL}}js/bootstrap.min.js" ></script>
+      <script src="{{.Site.BaseURL}}js/build.js" ></script>
    </body>
 </html>

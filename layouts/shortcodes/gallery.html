@@ -1,6 +1,6 @@
 <div class="row mt-5">
-   <div class="col-sm-12 text-center">
-      <h4>{{ i18n "photoGallery"}}</h4>
+   <div class="col-sm-12">
+      {{with .Get "showTitle" }} <h4 class="text-center">{{ i18n "photoGallery"}}</h4> {{end}}
       <div class="mt-4">
          {{ .Inner }}
       </div>

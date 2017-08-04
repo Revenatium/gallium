@@ -1,7 +1,19 @@
-<li class="media mb-4">
-   <img class="d-flex mr-3" src="{{.Params.Image}}" alt="Generic placeholder image">
-   <div class="media-body">
-      <h5 class="mt-0 mb-1">{{ .Title | markdownify }}</h5>
+{{ $base := .Params.Image.base }}
+{{ $path := .Params.Image.path }}
+<li class="mb-5">
+   <div class="media">
+      <img class="d-flex align-self-start mr-3" src="{{print $base "q_auto:low,f_auto,w_350,h_200,c_fill/" $path}}" />
+      <div class="media-body">
+         <h5 class="mt-0 mb-1">{{ .Title | markdownify }}</h5>
+         <div><i class="fa fa-user mr-1"></i>{{ .Params.Pax }}</div>
+         <div><i class="fa fa-bed mr-1"></i>{{ .Params.Bedding }}</div>
+         {{ .Params.Description }}
+         <div>
+            <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#collapseExample{{.Params.Id}}">Detalles</button>
+         </div>
+      </div>
+   </div>
+   <div class="collapse" id="collapseExample{{.Params.Id}}">
       {{ .Content }}
    </div>
 </li>

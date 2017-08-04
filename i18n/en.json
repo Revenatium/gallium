@@ -18,5 +18,9 @@
    {
       "id": "location",
       "translation": "Location"
+   },
+   {
+      "id": "amenities",
+      "translation": "Amenities"
    }
 ]

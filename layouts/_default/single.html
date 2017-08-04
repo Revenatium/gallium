@@ -3,10 +3,5 @@
 {{ end }}
 
 {{ define "main" }}
-   {{ if .Params.showRooms}}
-      {{ partial "rooms.html" . }}
-   {{ end}}
-   {{ if .Params.showDeals}}
-      {{ partial "deals.html" . }}
-   {{ end}}
+   {{ .Content }}
 {{ end }}

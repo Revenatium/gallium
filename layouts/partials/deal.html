@@ -1,4 +1,7 @@
-<div class="col-lg-4">
-   <h2>{{ .Title | markdownify }}</h2>
-   {{ .Content }}
-</div>
+<li class="media mb-4">
+   <img class="d-flex mr-3" src="{{.Params.Image}}" alt="Generic placeholder image">
+   <div class="media-body">
+      <h5 class="mt-0 mb-1">{{ .Title | markdownify }}</h5>
+      {{ .Content }}
+   </div>
+</li>

@@ -1,0 +1,26 @@
+[
+   {
+      "id": "home",
+      "translation": "Inicio"
+   },
+   {
+      "id": "deals",
+      "translation": "Deals"
+   },
+   {
+      "id": "rooms",
+      "translation": "Rooms"
+   },
+   {
+      "id": "photoGallery",
+      "translation": "Gallery"
+   },
+   {
+      "id": "location",
+      "translation": "Location"
+   },
+   {
+      "id": "amenities",
+      "translation": "Amenities"
+   }
+]

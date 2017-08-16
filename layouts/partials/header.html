@@ -1,2 +1,11 @@
-<div class="masthead">
+<div class="clearfix top-bar">
+	<div class="container">
+		<div class="pull-left top-bar-contact">
+			{{ with .Site.Params.hotelPhone }}<span class="hotel-phone"><i class="fa fa-phone"></i> {{.}}</span>{{ end }}
+			{{ with .Site.Params.hotelEmail }}<a href="mailto:{{.}}" class="hotel-phone"><i class="fa fa-envelope"></i> {{.}}</a>{{ end }}
+		</div>
+		<div class="pull-right top-bar-lang">
+			
+		</div>
+	</div>
 </div>

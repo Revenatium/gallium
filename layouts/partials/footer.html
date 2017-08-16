@@ -3,7 +3,7 @@
    <p class="hotel-info">
    	{{ with .Site.Params.hotelAddress }}<span class="hotel-phone">{{.}}</span><br>{{ end }}
    	{{ with .Site.Params.hotelPhone }}<span class="hotel-phone">{{.}}</span><br>{{ end }}
-   	{{ with .Site.Params.hotelPhone }}<span class="hotel-email">{{.}}</span>{{ end }}
+   	{{ with .Site.Params.hotelEmail }}<a href="mailto:{{.}}" class="hotel-email">{{.}}</a>{{ end }}
    </p>
    <p class="copyright">
       {{ if .Site.Copyright }}

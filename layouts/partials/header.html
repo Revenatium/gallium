@@ -4,8 +4,12 @@
 			{{ with .Site.Params.hotelPhone }}<span class="hotel-phone"><i class="fa fa-phone"></i> {{.}}</span>{{ end }}
 			{{ with .Site.Params.hotelEmail }}<a href="mailto:{{.}}" class="hotel-phone"><i class="fa fa-envelope"></i> {{.}}</a>{{ end }}
 		</div>
-		<div class="pull-right top-bar-lang">
-			
+		<div class="pull-right dropdown top-bar-lang">
+			<a href="#" data-toggle="dropdown">Español <span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#">English</a></li>
+				<li><a href="#">Español</a></li>
+			</ul>
 		</div>
 	</div>
 </div>

@@ -1,9 +1,16 @@
 <footer class="footer">
-   <p>
+  <div class="container">
+   <p class="hotel-info">
+   	{{ with .Site.Params.hotelAddress }}<span class="hotel-phone">{{.}}</span><br>{{ end }}
+   	{{ with .Site.Params.hotelPhone }}<span class="hotel-phone">{{.}}</span><br>{{ end }}
+   	{{ with .Site.Params.hotelPhone }}<span class="hotel-email">{{.}}</span>{{ end }}
+   </p>
+   <p class="copyright">
       {{ if .Site.Copyright }}
          {{ .Site.Copyright | markdownify }}
       {{ else }}
          Revenatium {{.Date.Year}}
       {{ end }}
    </p>
+  </div>
 </footer>

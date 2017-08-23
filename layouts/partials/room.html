@@ -1,10 +1,12 @@
 {{ $base := .Params.Image.base }}
 {{ $path := .Params.Image.path }}
 <li class="room-item">
-   <div class="media">
-      <img class="d-flex align-self-start mr-3" src="{{print $base "q_auto:low,f_auto,w_350,h_200,c_fill/" $path}}" />
-      <div class="media-body">
-         <h5 class="mt-0 mb-1">{{ .Title | markdownify }}</h5>
+   <div class="row">
+      <div class="col-sm-4 room-item-pic">
+         <img src="{{print $base "q_auto:low,f_auto,w_350,h_200,c_fill/" $path}}" />
+      </div>
+      <div class="col-sm-8 room-item-info">
+         <h2 class="room-title">{{ .Title | markdownify }}</h2 class="room-title">
          <div class="room-data">
             <div class="room-data-pax"><i class="fa fa-user mr-1"></i>{{ .Params.Pax }}</div>
             <div class="room-data-bed"><i class="fa fa-bed mr-1"></i>{{ .Params.Bedding }}</div>

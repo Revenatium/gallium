@@ -1,6 +1,27 @@
 .room-item {
     margin: 20px 0 40px 0;
+    background-color: #f9f9f9;
 
+    .room-item-info {
+    	padding-top: 20px;
+    	padding-bottom: 20px;
+    }
+
+    .collapse {
+    	text-align: center;
+    	border: 1px solid #f9f9f9;
+    	background-color: #fff;
+
+    	.lead,
+    	.photo-gallery-container,
+    	.room-amenities,
+    	.room-cta {
+			padding: 20px;
+    	}
+    }
+}
+.room-item-pic img {
+	width: 100%;
 }
 .room-short-desc {
     margin: 10px 0;

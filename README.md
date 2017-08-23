@@ -14,7 +14,7 @@ git submodule add https://github.com/Revenatium/aluminium.git themes/aluminium
 ```
 Y finalmente modifico el config.toml para que use el nuevo tema
 ```sh
-echo 'theme = "ananke"' >> config.toml
+echo 'theme = "aluminium"' >> config.toml
 ```
 Para ver en el navegador
 ```sh

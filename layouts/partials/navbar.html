@@ -1,9 +1,15 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+<nav class="navbar navbar-toggleable-md">
    <div class="container">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="{{ .Site.BaseURL | absLangURL }}">{{ .Site.Title | safeHTML }}</a>
+      <a class="navbar-brand" href="{{ .Site.BaseURL | absLangURL }}">
+      {{ if .Site.Params.logoURL }}
+         <img src="{{ .Site.Params.logoURL }}" alt="{{ .Site.Title | safeHTML }}">
+      {{ else }}
+         {{ .Site.Title | safeHTML }}
+      {{ end }}
+      </a>
       <div class="collapse navbar-collapse" id="navbarNav">
          <ul class="navbar-nav ml-auto">
             {{- $currentURL := .URL | absLangURL -}}

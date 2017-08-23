@@ -1,0 +1,19 @@
+.photo-gallery {
+    img {
+        width: 25%;
+        float: left;
+    }
+    img:first-child {
+        width: 50%;
+    }
+}
+.room-item {
+    .photo-gallery {
+        img {
+            width: 25%;
+        }
+        img:first-child {
+            width: 75%;
+       }
+    }
+}

@@ -3,4 +3,23 @@
     padding: 15px 0;
     background-color: $footer-bgcolor;
     color: $footer-txtcolor;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 40px;
+
+    a {
+    	color: $footer-linkcolor;
+    }
+}
+
+.social-media {
+    list-style: none;
+    padding-left: 0;
+
+    &>li>a {	
+	    float: left;
+	    color: $footer-linkcolor;
+	    font-size: 160%;
+	    margin-right: .5em;
+    }
 }

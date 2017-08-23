@@ -1,0 +1,17 @@
+.room-item {
+    margin: 20px 0 40px 0;
+
+}
+.room-short-desc {
+    margin: 10px 0;
+}
+.room-data {
+    font-size: 90%;
+    color: #888;
+    margin: 10px 0;
+
+    &>div {
+        display: inline-block;
+        margin-right: 1em;
+    }
+}

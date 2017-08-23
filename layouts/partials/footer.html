@@ -1,10 +1,19 @@
 <footer class="footer">
   <div class="container">
    <p class="hotel-info">
-   	{{ with .Site.Params.hotelAddress }}<span class="hotel-phone">{{.}}</span><br>{{ end }}
+   	{{ with .Site.Params.hotelAddress | markdownify }}<span class="hotel-address">{{.}}</span><br>{{ end }}
    	{{ with .Site.Params.hotelPhone }}<span class="hotel-phone">{{.}}</span><br>{{ end }}
    	{{ with .Site.Params.hotelEmail }}<a href="mailto:{{.}}" class="hotel-email">{{.}}</a>{{ end }}
    </p>
+
+   {{ if .Site.Params.Social }}
+   <ul class="clearfix social-media">
+   {{ range .Site.Params.Social }}
+    <li><a href="{{ .url }}"><span class="fa fa-{{ .icon }}"></span></a></li>
+   {{ end }}
+   </ul>
+   {{ end }}
+   
    <p class="copyright">
       {{ if .Site.Copyright }}
          {{ .Site.Copyright | markdownify }}

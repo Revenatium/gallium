@@ -10,6 +10,11 @@
 @import 'source/scss/vendor/bootstrap';
 
 //theme styles
+@import 'source/scss/components/navbar';
 @import 'source/scss/components/top-bar';
+@import 'source/scss/components/page-banner';
 @import 'source/scss/components/footer';
+@import 'source/scss/components/rooms';
+@import 'source/scss/components/gallery';
+@import 'source/scss/components/home-amenity';
 @import 'source/scss/styles';

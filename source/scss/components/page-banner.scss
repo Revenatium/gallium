@@ -7,8 +7,14 @@
   h1 {
     font-size: 22px;
   }
+
   .lead {
     font-size: 44px;
+  }
+
+  .btn {
+    padding: 14px 24px;
+    font-size: 21px;
   }
 }
 .page-banner {
@@ -34,9 +40,8 @@
     text-shadow: 0 1px 1px rgba(0,0,0,0.3);
     position: relative;
   }
-}
 
-.jumbotron .btn {
-  padding: 14px 24px;
-  font-size: 21px;
+  .itm-promotion-code-modal-link span {
+    color: #fff;
+  }
 }

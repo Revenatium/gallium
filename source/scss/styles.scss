@@ -8,6 +8,10 @@
 .content-block {
   padding-top: 40px;
   padding-bottom: 40px;
+
+  h2 {
+    margin-bottom: 1.5rem;
+  }
 }
 .sidebar-block {
   border: 1px solid #eee;
@@ -15,7 +19,9 @@
   padding: 20px;
   margin-bottom: 20px;
 }
-
+.home-main-content {
+  margin-bottom: 40px;
+}
 .nav .nav-link.active{
    font-weight: bold;
 }

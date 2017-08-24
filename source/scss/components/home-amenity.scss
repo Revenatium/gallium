@@ -1,5 +1,5 @@
 .home-amenity {
-    padding: 150px 15px 15px 15px;
+    padding: 180px 20px 20px 20px;
     position: relative;
     background-position: center;
     background-size: cover;
@@ -9,6 +9,7 @@
 
     &:hover {
         text-decoration: none;
+        color: #fff;
     }
 
     &:before {

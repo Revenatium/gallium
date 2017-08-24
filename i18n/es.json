@@ -22,5 +22,33 @@
    {
       "id": "amenities",
       "translation": "Comodidades"
+   },
+   {
+      "id": "name",
+      "translation": "Nombre"
+   },
+   {
+      "id": "lastName",
+      "translation": "Apellidos"
+   },
+   {
+      "id": "email",
+      "translation": "Email"
+   },
+   {
+      "id": "phone",
+      "translation": "Teléfono"
+   },
+   {
+      "id": "comments",
+      "translation": "Comentarios"
+   },
+   {
+      "id": "contactBtn",
+      "translation": "Contáctanos"
+   },
+   {
+      "id": "contactSidebarTitle",
+      "translation": "Otras formas de contactarnos"
    }
 ]

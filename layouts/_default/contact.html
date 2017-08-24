@@ -6,13 +6,13 @@
       	<div class="row">
       		<div class="col-sm-6">
       			<div class="form-group">
-      				<label for="name">Nombre <span class="required text-danger">*</span></label>
+      				<label for="name">{{ i18n "name"}} <span class="required text-danger">*</span></label>
       				<input type="text" id="name" class="form-control">
       			</div>
       		</div>
       		<div class="col-sm-6">
       			<div class="form-group">
-      				<label for="last_name">Apellidos</label>
+      				<label for="last_name">{{ i18n "lastName"}}</label>
       				<input type="text" id="last_name" class="form-control">
       			</div>
       		</div>
@@ -20,13 +20,13 @@
       	<div class="row">
       		<div class="col-sm-6">
       			<div class="form-group">
-      				<label for="email">Email <span class="required text-danger">*</span></label>
+      				<label for="email">{{ i18n "email"}} <span class="required text-danger">*</span></label>
       				<input type="text" id="email" class="form-control">
       			</div>
       		</div>
       		<div class="col-sm-6">
       			<div class="form-group">
-	      			<label for="phone">Teléfono</label>
+	      			<label for="phone">{{ i18n "phone"}}</label>
 	      			<input type="text" id="phone" class="form-control">
       			</div>
       		</div>
@@ -34,7 +34,7 @@
       	<div class="row">
       		<div class="col-sm-12">
       			<div class="form-group">
-	      			<label for="comments">Comentarios <span class="required text-danger">*</span></label>
+	      			<label for="comments">{{ i18n "comments"}} <span class="required text-danger">*</span></label>
 	      			<textarea name="" id="comments" class="form-control" rows="5"></textarea>
       			</div>
       		</div>
@@ -42,7 +42,7 @@
       	<div class="row">
 		  <div class="col-sm-12">
 		    <div class="form-group">
-		      <button type="submit" id="submitContactForm" class="btn btn-primary">Contáctanos</button>
+		      <button type="submit" id="submitContactForm" class="btn btn-primary">{{ i18n "contactBtn"}}</button>
 		    </div>    
 		  </div>
 		</div>
@@ -50,7 +50,7 @@
    </div>
    <div class="col-sm-4">
    	<div class="sidebar-block contact-sidebar">
-   		<h5>Otras formas de contactarnos</h5>	
+   		<h5>{{ i18n "contactSidebarTitle"}}</h5>	
 	   	{{ with .Site.Params.hotelPhone }}<span class="hotel-phone">{{.}}</span><br>{{ end }}
 	   	{{ with .Site.Params.hotelEmail }}<a href="mailto:{{.}}" class="hotel-email">{{.}}</a>{{ end }}
 	   	{{ with .Site.Params.hotelAddress | markdownify }} <p><span class="hotel-address">{{.}}</span></p>{{ end }}

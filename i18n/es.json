@@ -50,5 +50,13 @@
    {
       "id": "contactSidebarTitle",
       "translation": "Otras formas de contactarnos"
+   },
+   {
+      "id": "bookNow",
+      "translation": "Reservar ahora"
+   },
+   {
+      "id": "roomDetails",
+      "translation": "Detalles"
    }
 ]

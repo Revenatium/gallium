@@ -18,4 +18,14 @@ header>.navbar {
     		color: $navbar-item-active-color;
 		}
     }
+    .navbar-toggler {
+        border-color: $navbar-item-color;
+        color: $navbar-item-color;
+
+        &:hover,
+        &:focus {
+            background-color: $navbar-item-hover-bgcolor;
+            color: $navbar-item-hover-color;
+        }
+    }
 }

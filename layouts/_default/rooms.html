@@ -8,7 +8,7 @@
       {{ .Content }}
    </div>
 </div>
-<ul class="list-unstyled">
+<ul class="list-unstyled list-items">
    {{ range where .Site.RegularPages "Type" "==" "rooms" }}
       {{partial "room" . }}
    {{ end }}

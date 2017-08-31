@@ -70,5 +70,9 @@
    {
       "id": "dealIncludes",
       "translation": "Incluye"
+   },
+   {
+      "id": "viewPromos",
+      "translation": "Ver promociones"
    }
 ]

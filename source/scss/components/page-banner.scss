@@ -2,20 +2,28 @@
   background-color: #f3f3f3;
   text-align: center;
   border-radius: 0;
-  padding-bottom: 1rem;
-  padding-top: 2rem;
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0.5rem;
+  padding-top: 1rem;
 
   h1 {
     font-size: 22px;
   }
 
-  .lead {
-    font-size: 44px;
+  .lead, 
+  .main-block>p {
+      font-size: 28px;
+      line-height: 28px;
   }
 
   .btn {
     padding: 14px 24px;
     font-size: 21px;
+  }
+
+  .itm-promotion-code-modal-link span {
+    color: $brand-color;
   }
 }
 .page-banner {
@@ -23,8 +31,8 @@
   background-size: cover;
   color: #fff;
   position: relative;
-  padding-bottom: 5rem;
-  padding-top: 5rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
 
   &:before {
     display: block;
@@ -46,5 +54,40 @@
 
   .itm-promotion-code-modal-link span {
     color: #fff;
+  }
+}
+
+.widget-container {
+  background-color: transparent;
+    padding-top: 20px;
+  -webkit-transition: background-color 0.3s; /* Safari */
+  transition: background-color 0.3s;
+}
+.is-sticky>.widget-container {
+    background-color: #f3f3f3;
+    z-index: 100 !important;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3); 
+
+    .itm-promotion-code-modal-link span {
+      color: $brand-color;
+    }
+}
+
+@media (min-width: 576px) {
+  .jumbotron {
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+
+    .lead, 
+    .main-block>p {
+      font-size: 44px;
+      line-height: 50px;
+    }
+
+  }
+
+  .page-banner {
+    padding-bottom: 5rem;
+    padding-top: 5rem;
   }
 }

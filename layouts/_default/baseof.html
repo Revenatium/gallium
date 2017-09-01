@@ -32,7 +32,7 @@
             <h1>{{ .Title | markdownify }}</h1>
             <p class="lead">{{ .Description | markdownify }}</p>
          </div>
-         {{ if not (in .Params.hideBooker "true") }}
+         {{ if ne .Params.hideBooker true }}
          <div class="widget-container">
             <div class="container">
                <div id="rvm-booker-container" class="itm-booker itm-booker-horizontal"></div>

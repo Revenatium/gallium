@@ -1,5 +1,15 @@
 <footer class="footer">
   <div class="container">
+  {{ if .Site.Menus.footer }}
+  <ul class="nav nav-footer">
+  {{ range .Site.Menus.footer }}
+    <li class="nav-item">
+       <a class="nav-link" href="{{.URL | absURL }}">{{ .Name }}</a>
+    </li>
+  {{ end }}
+  </ul>
+  {{ end }}
+
    <p class="hotel-info">
    	{{ with .Site.Params.hotelAddress | markdownify }}<span class="hotel-address">{{.}}</span><br>{{ end }}
    	{{ with .Site.Params.hotelPhone }}<span class="hotel-phone">{{.}}</span><br>{{ end }}

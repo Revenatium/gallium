@@ -96,10 +96,10 @@ id: 2
 pax: "2 personas"
 bedding: "2 camas matrimoniales"
 ---
-{{< gallery >}}
-   {{< mainGalleryImage base="https://res.cloudinary.com/itermotus/" path="hotel-stage/ixtul/1/juior_2.jpg" >}}
-   {{< galleryImage base="https://res.cloudinary.com/itermotus/" path="hotel-stage/ixtul/1/junior_3.jpg" >}}
-{{< /gallery >}}
+{{< photoGallery 
+base="https://res.cloudinary.com/itermotus/" 
+pics="assets/coralmaya/4-habitaciones-1.jpg,assets/coralmaya/4-habitaciones-2.jpg,assets/coralmaya/4-habitaciones-3.jpg" 
+>}}
 ```
 ### Ofertas
 Es el mismo proceso que habitaciones pero en lugar de crear una publicacóión en la carpeta rooms, debe hacerse en la carpeta deals:
@@ -108,15 +108,11 @@ Es el mismo proceso que habitaciones pero en lugar de crear una publicacóión e
 hugo new deals/mi-espantosa-oferta.es.md
 ```
 ## Shortcodes
-En el ejemplo de un nuevo room agregamos un "pseudo-elemento" llamado "gallery", este es un "atajo" que solo necesitan mínima información para crear una sección completa, en este caso una galería.
+En el ejemplo de un nuevo room agregamos un "pseudo-elemento" llamado "photoGallery", este es un "atajo" que solo necesitan mínima información para crear una sección completa, en este caso una galería.
 Al igual que esta tenemos otros shortcuts, a continuación se enlistan:
 
-- gallery
-    - sirve como contenedor de galleryImages y mainGalleryImage  
-- mainGalleryImage (base, path)
-    - es la imágen principal de la gallería, solo debe haber una por galería
-- galleryImage (base, path)
-    - imágen de una galería, puede haber más de una
+- photoGallery (base, pics)
+    - Genera una galería de imágenes. Recibe como parámetros la base de la URL (base) y la ruta de varías imagenes separadas por coma (se recomienda usar al menos tres), el layout se ajustará atuomáticamente basado en el número de fotos.
 - circleAmenity (base, path, title, [inner])
     - elemento que incluye una imagen recorada en círculo, un título y una descripción (inner)
 - location (lat, lng, zoom, [inner])

@@ -27,4 +27,18 @@
 .#{$fa-css-prefix}-twitter:before { content: $fa-var-twitter; }
 .#{$fa-css-prefix}-user:before { content: $fa-var-user; }
 .#{$fa-css-prefix}-bed:before { content: $fa-var-bed; }
+.#{$fa-css-prefix}-phone:before { content: $fa-var-phone; }
+.#{$fa-css-prefix}-envelope:before { content: $fa-var-envelope; }
+.#{$fa-css-prefix}-bars:before { content: $fa-var-bars; }
+.#{$fa-css-prefix}-instagram:before { content: $fa-var-instagram; }
+.#{$fa-css-prefix}-facebook-square:before { content: $fa-var-facebook-square; }
+.#{$fa-css-prefix}-facebook:before { content: $fa-var-facebook; }
+.#{$fa-css-prefix}-twitter-square:before { content: $fa-var-twitter-square; }
+.#{$fa-css-prefix}-twitter:before { content: $fa-var-twitter; }
+.#{$fa-css-prefix}-google-plus-square:before { content: $fa-var-google-plus-square; }
+.#{$fa-css-prefix}-google-plus:before { content: $fa-var-google-plus; }
+.#{$fa-css-prefix}-youtube-square:before { content: $fa-var-youtube-square; }
+.#{$fa-css-prefix}-youtube:before { content: $fa-var-youtube; }
+.#{$fa-css-prefix}-pinterest-square:before { content: $fa-var-pinterest-square; }
+.#{$fa-css-prefix}-pinterest:before { content: $fa-var-pinterest; }
 @import "node_modules/font-awesome/scss/screen-reader";

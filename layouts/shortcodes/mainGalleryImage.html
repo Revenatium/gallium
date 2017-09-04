@@ -1,3 +1,5 @@
 {{ $base := .Get "base" }}
 {{ $path := .Get "path" }}
-<img src="{{ print $base "q_auto:low,f_auto,w_600,h_400,c_fill/" $path }}" />
+<a href="{{ print $base "q_auto:low,f_auto,w_1200,h_800,c_fit/" $path }}" class="gallery-link">
+	<img src="{{ print $base "q_auto:low,f_auto,w_600,h_430,c_fill/" $path }}" />
+</a>

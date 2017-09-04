@@ -1,0 +1,31 @@
+header>.navbar {
+    background-color: $navbar-bgcolor;
+
+    .navbar-nav {
+    	.nav-link {
+    		color: $navbar-item-color;
+    	}
+    	.nav-link:focus, 
+    	.nav-link:hover {
+    		background-color: $navbar-item-hover-bgcolor;
+    		color: $navbar-item-hover-color;
+    	}
+    	.active>.nav-link, 
+		.nav-link.active, 
+		.nav-link.open, 
+		.open>.nav-link {
+    		background-color: $navbar-item-active-bgcolor;
+    		color: $navbar-item-active-color;
+		}
+    }
+    .navbar-toggler {
+        border-color: $navbar-item-color;
+        color: $navbar-item-color;
+
+        &:hover,
+        &:focus {
+            background-color: $navbar-item-hover-bgcolor;
+            color: $navbar-item-hover-color;
+        }
+    }
+}

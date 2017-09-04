@@ -1,6 +1,6 @@
-<div class="row mt-5">
+<div class="row">
    <div class="col-sm-12 text-center">
-      <h4>{{ i18n "location"}}</h4>
+      <h2>{{ i18n "location"}}</h2>
       {{ .Inner }}
       <div id="map" class="itm-map mt-4"></div>
    </div>
@@ -18,4 +18,4 @@ function initMap() {
    });
 }
 </script>
-<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ .Site.Params.maps_api_key }}&callback=initMap"></script>-->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key={{ .Site.Params.maps_api_key }}&callback=initMap"></script>

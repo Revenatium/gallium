@@ -1,7 +1,7 @@
 [
    {
       "id": "home",
-      "translation": "Inicio"
+      "translation": "Home"
    },
    {
       "id": "deals",
@@ -22,5 +22,57 @@
    {
       "id": "amenities",
       "translation": "Amenities"
+   },
+   {
+      "id": "name",
+      "translation": "Name"
+   },
+   {
+      "id": "lastName",
+      "translation": "Last name"
+   },
+   {
+      "id": "email",
+      "translation": "Email"
+   },
+   {
+      "id": "phone",
+      "translation": "Phone"
+   },
+   {
+      "id": "comments",
+      "translation": "Comments"
+   },
+   {
+      "id": "contactBtn",
+      "translation": "Contact us"
+   },
+   {
+      "id": "contactSidebarTitle",
+      "translation": "Other ways to contact us"
+   },
+   {
+      "id": "bookNow",
+      "translation": "Book now"
+   },
+   {
+      "id": "roomDetails",
+      "translation": "Details"
+   },
+   {
+      "id": "dealDiscount",
+      "translation": "Off"
+   },
+   {
+      "id": "dealTerms",
+      "translation": "Terms and conditions"
+   },
+   {
+      "id": "dealIncludes",
+      "translation": "Includes"
+   },
+   {
+      "id": "viewPromos",
+      "translation": "View promotions"
    }
 ]

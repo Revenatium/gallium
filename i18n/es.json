@@ -22,5 +22,57 @@
    {
       "id": "amenities",
       "translation": "Comodidades"
+   },
+   {
+      "id": "name",
+      "translation": "Nombre"
+   },
+   {
+      "id": "lastName",
+      "translation": "Apellidos"
+   },
+   {
+      "id": "email",
+      "translation": "Email"
+   },
+   {
+      "id": "phone",
+      "translation": "Teléfono"
+   },
+   {
+      "id": "comments",
+      "translation": "Comentarios"
+   },
+   {
+      "id": "contactBtn",
+      "translation": "Contáctanos"
+   },
+   {
+      "id": "contactSidebarTitle",
+      "translation": "Otras formas de contactarnos"
+   },
+   {
+      "id": "bookNow",
+      "translation": "Reservar ahora"
+   },
+   {
+      "id": "roomDetails",
+      "translation": "Detalles"
+   },
+   {
+      "id": "dealDiscount",
+      "translation": "de descuento"
+   },
+   {
+      "id": "dealTerms",
+      "translation": "Términos y condiciones"
+   },
+   {
+      "id": "dealIncludes",
+      "translation": "Incluye"
+   },
+   {
+      "id": "viewPromos",
+      "translation": "Ver promociones"
    }
 ]

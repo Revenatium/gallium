@@ -1,0 +1,5 @@
+<ul class="list-unstyled list-single">
+{{ range first 1 (where .Site.RegularPages "Type" "==" "deals") }}
+	{{partial "deal" . }}
+{{ end }}
+</ul>

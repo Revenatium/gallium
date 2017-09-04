@@ -1,0 +1,19 @@
+$brand-color: #333;
+$brand-color-secondary: #555;
+
+$top-bar-bgcolor: $brand-color-secondary;
+$top-bar-txtcolor: rgba(255,255,255,0.8);
+$top-bar-linkcolor: rgba(255,255,255,0.8);
+
+$footer-bgcolor: $brand-color-secondary;
+$footer-txtcolor: #ddd;
+$footer-linkcolor: #fff;
+
+// Navbar
+$navbar-padding-y:            15px;
+$navbar-bgcolor:              $brand-color;
+$navbar-item-color:           #eee;
+$navbar-item-hover-bgcolor:   lighten($navbar-bgcolor,5%);
+$navbar-item-hover-color:     #eee;
+$navbar-item-active-bgcolor:  transparent;
+$navbar-item-active-color:    #fff;

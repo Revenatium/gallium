@@ -3,17 +3,12 @@
 {{ end }}
 
 {{ define "main" }}
-<div id="rvm-booker-container" class="itm-booker itm-booker-horizontal"></div>
-<div class="jumbotron">
-   <p class="lead">{{ i18n "deals" }}</p>
-   <h1>{{ .Description | markdownify }}</h1>
-</div>
 <div class="row">
    <div class="col-sm-12">
       {{ .Content }}
    </div>
 </div>
-<ul class="list-unstyled">
+<ul class="list-unstyled list-items">
    {{ range where .Site.RegularPages "Type" "==" "deals" }}
       {{partial "deal" . }}
    {{ end }}

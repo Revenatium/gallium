@@ -1,0 +1,38 @@
+.footer {
+	font-size: 90%;
+    padding: 15px 0;
+    background-color: $footer-bgcolor;
+    color: $footer-txtcolor;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 40px;
+
+    a {
+    	color: $footer-linkcolor;
+    }
+}
+
+.social-media {
+    list-style: none;
+    padding-left: 0;
+
+    &>li>a {	
+	    float: left;
+	    color: $footer-linkcolor;
+	    font-size: 160%;
+	    margin-right: .5em;
+    }
+}
+
+.nav-footer {
+    margin-bottom: 20px;
+
+    &>li>a {
+        border-left: 1px solid rgba(255,255,255,0.3)
+    }
+
+    &>li:first-child>a {
+        padding-left: 0;
+        border-left: none;
+    }
+}

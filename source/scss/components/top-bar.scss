@@ -1,0 +1,15 @@
+.top-bar {
+	font-size: 90%;
+    padding: 10px 0;
+    background-color: $top-bar-bgcolor;
+    color: $top-bar-txtcolor;
+
+    .float-right > a,
+    .float-left > a {
+    	color: $top-bar-linkcolor;
+    }
+
+    .hotel-phone {
+    	margin-right: 1em;
+    }
+}

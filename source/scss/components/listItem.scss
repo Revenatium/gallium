@@ -20,10 +20,7 @@
 .listItem-pic {
     overflow: hidden;
     position: relative;
-    img {
-        min-width: 100%;
-        min-height: 100%;
-    }
+    background-size: cover;
 }
 .listItem-shortDesc {
     margin: 10px 0;
@@ -60,6 +57,6 @@
         }
     }
     .listItem-pic {
-        max-height: 200px;
+        height: 200px;
     }
 }

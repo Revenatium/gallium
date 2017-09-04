@@ -2,8 +2,7 @@
 {{ $path := .Params.Image.path }}
 <li class="listItem listItem-deal">
    <div class="listItem-content">
-      <div class="listItem-pic">
-         <img src="{{print $base "q_auto:low,f_auto,w_350,h_200,c_fill/" $path}}" />
+      <div class="listItem-pic" style="background-image: url({{print $base "q_auto:low,f_auto,w_350,h_200,c_fill/" $path}})">
          {{ if .Params.DiscountAmount }}
          <p class="discount-amount">
          	<strong>{{ .Params.DiscountAmount }}</strong>

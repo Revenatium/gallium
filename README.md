@@ -102,11 +102,30 @@ pics="assets/coralmaya/4-habitaciones-1.jpg,assets/coralmaya/4-habitaciones-2.jp
 >}}
 ```
 ### Ofertas
-Es el mismo proceso que habitaciones pero en lugar de crear una publicacóión en la carpeta rooms, debe hacerse en la carpeta deals:
+Es el mismo proceso que habitaciones pero en lugar de crear una publicación en la carpeta rooms, debe hacerse en la carpeta deals:
 
 ```sh
 hugo new deals/mi-espantosa-oferta.es.md
 ```
+
+Cada oferta debe contener los siguientes parámetros:
+```md
+title: "Summer Special"
+date: 2017-08-25T12:16:49-05:00
+draft: false
+image: {base: "https://res.cloudinary.com/itermotus/", path: "assets/coralmaya/img/rooms/4-habitaciones-coral-maya.jpg"}
+description: ""
+discountAmount: "30%"
+discountText: "and kids free"
+includes: ["30% Off", "Up to 2 minors free"]
+conditions: ["Travel from May 1st to 17th, 2017", "Book from April 1st to 30th, 2017", "3 nights minimum stay"]
+```
+- image, es la imagen que se muestra en el listado
+- description (opcional), se muestra debajo del titulo de la promoción
+- discountAmount (opcional), es el texto en grande que se muestra sobre la imagen, si no se especifica se mostrará solo el texto pequeño
+- discountText (opcional), el texto más pequeño que se muestra sobre la imagen, si no se especifica se mostrará "de descuento" / "Off"
+- includes, lista de lo que incluye la promoción
+- conditions, términos y condiciones de la promoción
 
 ## Menús
 ### Menú principal
@@ -150,6 +169,7 @@ En el ejemplo de un nuevo room agregamos un "pseudo-elemento" llamado "photoGall
 Al igual que esta tenemos otros shortcuts, a continuación se enlistan:
 
 **photoGallery (base, pics)**
+
 Genera una galería de imágenes. Recibe como parámetros la base de la URL (base) y la ruta de varías imagenes separadas por coma (se recomienda usar al menos tres), el layout se ajustará atuomáticamente basado en el número de fotos.
 
 ```md
@@ -160,6 +180,7 @@ pics="assets/coralmaya/img/rooms/one-bedroom-cocineta.jpg,assets/coralmaya/img/r
 ```
 
 **circleAmenity (base, path, title, [inner])**
+
 Elemento que incluye una imagen recorada en círculo, un título y una descripción (inner)
 
 ```md
@@ -169,6 +190,7 @@ Enjoy a day in the different cenotes of the Riviera Maya.
 ```
 
 **location (lat, lng, zoom, [inner])**
+
 Agrega la sección completa de ubicación con título predefinido, descripción (inner) y un mapa de google con un marcador en el lat, lng dado con el zoom especificado.
 
 ```md
@@ -178,6 +200,7 @@ La ubicación le permite la práctica de actividades acuáticas, playa privada y
 ```
 
 **homeAmenity (title, url, base, path, [inner])**
+
 Genera un link con una imagen de fondo, un titulo y una descripción. 
 
 ```md
@@ -187,6 +210,7 @@ Genera un link con una imagen de fondo, un titulo y una descripción.
 ```
 
 **homeDeal (sin parámetros)**
+
 Muestra la promoción más reciente.
 
 ```md
@@ -194,6 +218,7 @@ Muestra la promoción más reciente.
 ```
 
 **interstitial (btnText, btnURL, [inner])**
+
 Muestra un elemento que incluye una descripción y un botón. 
 
 ```md

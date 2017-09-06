@@ -1,5 +1,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{{ if .Params.meta_title }}
+<meta name="title" content="{{ .Params.meta_title }}">
+{{ else }}
+<meta name="title" content="{{ .Params.title }}">
+{{ end }}
+{{ if .Params.meta_description }}
+<meta name="description" content="{{ .Params.meta_description }}">
+{{ else }}
+<meta name="description" content="{{ .Params.description }}">
+{{ end }}
+{{ with .Params.meta_tags }}
+<meta name="keywords" content="{{ . }}">
+{{ end }}
 
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/twitter_cards.html" . }}

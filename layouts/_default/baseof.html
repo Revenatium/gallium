@@ -26,8 +26,8 @@
          {{ partial "navbar.html" . }}
       </header>
 
-      <div class="jumbotron {{if (.Params.featured_image) }}page-banner{{end}}" 
-      {{ with .Params.featured_image }}style="background-image: url(https://res.cloudinary.com/itermotus/q_auto:low,f_auto,w_1200,h_600,c_fill/{{.}});" {{ end }}>
+      <div class="jumbotron {{if isset .Params "featured_image" }}page-banner{{end}}" 
+      {{ if isset .Params "featured_image" }}style="background-image: url({{ .Params.featured_image.base}}q_auto:low,f_auto,w_1200,h_600,c_fill/{{ .Params.featured_image.path }});" {{ end }}>
          <div class="container">
             <h1>{{ .Title | markdownify }}</h1>
             <p class="lead">{{ .Description | markdownify }}</p>

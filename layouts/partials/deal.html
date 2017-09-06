@@ -3,10 +3,14 @@
 <li class="listItem listItem-deal">
    <div class="listItem-content">
       <div class="listItem-pic" style="background-image: url({{print $base "q_auto:low,f_auto,w_350,h_200,c_fill/" $path}})">
-         {{ if .Params.DiscountAmount }}
+         {{ if or .Params.DiscountAmount .Params.discountText}}
          <p class="discount-amount">
          	<strong>{{ .Params.DiscountAmount }}</strong>
-         	{{ i18n "dealDiscount"}}
+         	{{ if .Params.discountText}}
+         		{{ .Params.discountText}}
+         	{{ else }}
+         		{{ i18n "dealDiscount"}}
+         	{{ end }}
          </p>
          {{ end }}
       </div>

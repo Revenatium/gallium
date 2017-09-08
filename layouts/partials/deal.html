@@ -17,19 +17,19 @@
       <div class="listItem-info">
          <h2 class="listItem-title">{{ .Title | markdownify }}</h2>
          <div class="listItem-shortDesc">
-	        {{ if .Params.Includes }}
 	        <div class="deal-includes">
 	        	{{ if .Params.Description }}
 	        		<p>{{ .Params.Description }}</p>
 	        	{{ end }}
+	        	{{ if .Params.Includes }}
 	         	<p><strong>{{ i18n "dealIncludes"}}</strong></p>
 	         	<ul>
 		         	{{range .Params.Includes}}
 		         		<li>{{ . }}</li>
 		         	{{ end }}
 		        </ul>
+	         	{{ end }}
 	         </div>
-	         {{ end }}
 	         {{ if .Params.Conditions }}
 	         <div class="deal-conditions dropdown">
 	         	<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

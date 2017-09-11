@@ -7,6 +7,24 @@
   padding-bottom: 0.5rem;
   padding-top: 1rem;
 
+  .carousel-inner {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    z-index: 0;
+  }
+  .carousel-item {
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+  .banner-content {
+    z-index: 2;
+    position: relative;
+  }
+
   h1 {
     font-size: 22px;
   }
@@ -26,6 +44,7 @@
     color: $brand-color;
   }
 }
+.jumbotron.slide,
 .page-banner {
   background-position: center;
   background-size: cover;
@@ -42,7 +61,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 0;
+    z-index: 1;
     background-color: rgba(0,0,0,.3);
   }
 
@@ -86,6 +105,7 @@
 
   }
 
+  .jumbotron.slide,
   .page-banner {
     padding-bottom: 5rem;
     padding-top: 5rem;

@@ -26,20 +26,29 @@
          {{ partial "navbar.html" . }}
       </header>
 
-      <div class="jumbotron {{if isset .Params "featured_image" }}page-banner{{end}}" 
-      {{ if isset .Params "featured_image" }}style="background-image: url({{ .Params.featured_image.base}}q_auto:low,f_auto,w_1200,h_600,c_fill/{{ .Params.featured_image.path }});" {{ end }}>
-         <div class="container">
-            <h1>{{ .Title | markdownify }}</h1>
-            <p class="lead">{{ .Description | markdownify }}</p>
-         </div>
-         {{ if ne .Params.hideBooker true }}
-         <div class="widget-container">
-            <div class="container">
-               <div id="rvm-booker-container" class="itm-booker itm-booker-horizontal"></div>
+      {{if isset .Params "slider" }}
+         <div class="jumbotron carousel slide" data-ride="carousel">
+            {{ $base := .Params.slider.base }}
+            {{ $items := split .Params.slider.pics ","}}
+            {{ $len := (len $items) }}
+            <div class="carousel-inner">
+               {{ range $index, $element := $items }}
+               <div class="carousel-item{{ if (eq $index 0) }} active{{ end }}" style="background-image: url({{ print $base "q_auto:low,f_auto,w_1200,h_600,c_fill/" $element }});">
+               </div>
+               {{ end }}
             </div>
+
+            {{ partial "banner-content.html" . }}
+
          </div>
-         {{ end }}
-      </div>
+      {{ else }}
+         <div class="jumbotron {{if isset .Params "featured_image" }}page-banner{{end}}" 
+         {{ if isset .Params "featured_image" }}style="background-image: url({{ .Params.featured_image.base}}q_auto:low,f_auto,w_1200,h_600,c_fill/{{ .Params.featured_image.path }});" {{ end }}>
+            
+            {{ partial "banner-content.html" . }}
+
+         </div>
+      {{ end }}
 
       <div class="container">
 
@@ -64,7 +73,14 @@
               enabled:true
             }
           });
+          {{ if ne .Params.hideBooker true }}
           $('.widget-container').sticky({topSpacing:0});
+          {{ end }}
+          {{if isset .Params "slider" }}
+          $('.carousel').carousel({
+            interval: 2000
+          })
+          {{ end }}
       });
       </script>
    </body>

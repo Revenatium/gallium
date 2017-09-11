@@ -26,16 +26,29 @@
          {{ partial "navbar.html" . }}
       </header>
 
-      <div class="jumbotron {{if (.Params.featured_image) }}page-banner{{end}}" 
-      {{ with .Params.featured_image }}style="background-image: url(https://res.cloudinary.com/itermotus/q_auto:low,f_auto,w_1200,h_600,c_fill/{{.}});" {{ end }}>
-         <div class="container">
-            <h1>{{ .Title | markdownify }}</h1>
-            <p class="lead">{{ .Description | markdownify }}</p>
-            {{ if not (in .Params.hideBooker "true") }}
-               <div id="rvm-booker-container" class="itm-booker itm-booker-horizontal"></div>
-            {{ end }}
+      {{if isset .Params "slider" }}
+         <div class="jumbotron carousel slide" data-ride="carousel">
+            {{ $base := .Params.slider.base }}
+            {{ $items := split .Params.slider.pics ","}}
+            {{ $len := (len $items) }}
+            <div class="carousel-inner">
+               {{ range $index, $element := $items }}
+               <div class="carousel-item{{ if (eq $index 0) }} active{{ end }}" style="background-image: url({{ print $base "q_auto:low,f_auto,w_1200,h_600,c_fill/" $element }});">
+               </div>
+               {{ end }}
+            </div>
+
+            {{ partial "banner-content.html" . }}
+
          </div>
-      </div>
+      {{ else }}
+         <div class="jumbotron {{if isset .Params "featured_image" }}page-banner{{end}}" 
+         {{ if isset .Params "featured_image" }}style="background-image: url({{ .Params.featured_image.base}}q_auto:low,f_auto,w_1200,h_600,c_fill/{{ .Params.featured_image.path }});" {{ end }}>
+            
+            {{ partial "banner-content.html" . }}
+
+         </div>
+      {{ end }}
 
       <div class="container">
 
@@ -49,6 +62,7 @@
       <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+      <script src="{{.Site.BaseURL}}js/jquery.sticky.js"></script>
       <script src="{{.Site.BaseURL}}js/bootstrap.min.js" ></script>
       <script src="{{.Site.BaseURL}}js/build.js" ></script>
       <script type="text/javascript">
@@ -59,6 +73,14 @@
               enabled:true
             }
           });
+          {{ if ne .Params.hideBooker true }}
+          $('.widget-container').sticky({topSpacing:0});
+          {{ end }}
+          {{if isset .Params "slider" }}
+          $('.carousel').carousel({
+            interval: 2000
+          })
+          {{ end }}
       });
       </script>
    </body>

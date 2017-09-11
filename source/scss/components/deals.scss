@@ -1,0 +1,36 @@
+.listItem-deal {
+    .deal-includes {
+        &>p {
+            margin-bottom: 0;
+        }
+        ul {
+            margin-bottom: 1rem;
+        }
+    }
+    .deal-conditions {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .dropdown-menu {
+        padding-right: 1rem;
+    }
+    .discount-amount {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-bottom: 0;
+        padding: 15px 30px;
+        text-align: center;
+        background-color: $brand-color;
+        color: #fff;
+
+        strong {
+            font-size: 250%;
+            display: block;
+            font-weight: normal;
+        }
+    }
+}
+.home-deal .listItem-deal {
+    width: 100%;
+}

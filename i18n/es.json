@@ -50,5 +50,29 @@
    {
       "id": "contactSidebarTitle",
       "translation": "Otras formas de contactarnos"
+   },
+   {
+      "id": "bookNow",
+      "translation": "Reservar ahora"
+   },
+   {
+      "id": "roomDetails",
+      "translation": "Detalles"
+   },
+   {
+      "id": "dealDiscount",
+      "translation": "de descuento"
+   },
+   {
+      "id": "dealTerms",
+      "translation": "Términos y condiciones"
+   },
+   {
+      "id": "dealIncludes",
+      "translation": "Incluye"
+   },
+   {
+      "id": "viewPromos",
+      "translation": "Ver promociones"
    }
 ]

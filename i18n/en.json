@@ -1,7 +1,7 @@
 [
    {
       "id": "home",
-      "translation": "Inicio"
+      "translation": "Home"
    },
    {
       "id": "deals",
@@ -50,5 +50,29 @@
    {
       "id": "contactSidebarTitle",
       "translation": "Other ways to contact us"
+   },
+   {
+      "id": "bookNow",
+      "translation": "Book now"
+   },
+   {
+      "id": "roomDetails",
+      "translation": "Details"
+   },
+   {
+      "id": "dealDiscount",
+      "translation": "Off"
+   },
+   {
+      "id": "dealTerms",
+      "translation": "Terms and conditions"
+   },
+   {
+      "id": "dealIncludes",
+      "translation": "Includes"
+   },
+   {
+      "id": "viewPromos",
+      "translation": "View promotions"
    }
 ]

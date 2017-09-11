@@ -96,33 +96,162 @@ id: 2
 pax: "2 personas"
 bedding: "2 camas matrimoniales"
 ---
-{{< gallery >}}
-   {{< mainGalleryImage base="https://res.cloudinary.com/itermotus/" path="hotel-stage/ixtul/1/juior_2.jpg" >}}
-   {{< galleryImage base="https://res.cloudinary.com/itermotus/" path="hotel-stage/ixtul/1/junior_3.jpg" >}}
-{{< /gallery >}}
+{{< photoGallery 
+base="https://res.cloudinary.com/itermotus/" 
+pics="assets/coralmaya/4-habitaciones-1.jpg,assets/coralmaya/4-habitaciones-2.jpg,assets/coralmaya/4-habitaciones-3.jpg" 
+>}}
 ```
 ### Ofertas
-Es el mismo proceso que habitaciones pero en lugar de crear una publicacóión en la carpeta rooms, debe hacerse en la carpeta deals:
+Es el mismo proceso que habitaciones pero en lugar de crear una publicación en la carpeta rooms, debe hacerse en la carpeta deals:
 
 ```sh
 hugo new deals/mi-espantosa-oferta.es.md
 ```
+
+Cada oferta debe contener los siguientes parámetros:
+```md
+title: "Summer Special"
+date: 2017-08-25T12:16:49-05:00
+draft: false
+image: {base: "https://res.cloudinary.com/itermotus/", path: "assets/coralmaya/img/rooms/4-habitaciones-coral-maya.jpg"}
+description: ""
+discountAmount: "30%"
+discountText: "and kids free"
+includes: ["30% Off", "Up to 2 minors free"]
+conditions: ["Travel from May 1st to 17th, 2017", "Book from April 1st to 30th, 2017", "3 nights minimum stay"]
+```
+- image, es la imagen que se muestra en el listado
+- description (opcional), se muestra debajo del titulo de la promoción
+- discountAmount (opcional), es el texto en grande que se muestra sobre la imagen, si no se especifica se mostrará solo el texto pequeño
+- discountText (opcional), el texto más pequeño que se muestra sobre la imagen, si no se especifica se mostrará "de descuento" / "Off"
+- includes, lista de lo que incluye la promoción
+- conditions, términos y condiciones de la promoción
+
+## Menús
+### Menú principal
+Todas las páginas aparecen por default en el menú principal del sitio ubicado en la parte superior de cada página.
+
+#### Orden
+Las páginas se ordenan en el menú de acuerdo al valor ubicado en el parámetro "weight":
+```md
+---
+title: "Habitaciones"
+date: 2017-08-19T12:35:17-05:00
+draft: false
+weight: 2
+---
+```
+
+#### Omitir páginas
+Para omitir una página del menú principal hay que especificar un "weight" negativo:
+```md
+---
+title: "Políticas de privacidad"
+date: 2017-08-19T12:35:17-05:00
+draft: false
+weight: -1
+---
+```
+
+### Menú del _footer_
+En el footer se mostrará un menú que incluye automática mente todas las páginas que tengan el parámetro "menu: footer":
+```md
+---
+title: "Políticas de privacidad"
+date: 2017-08-20T12:40:54-05:00
+weight: -1
+menu: footer
+---
+```
+
 ## Shortcodes
-En el ejemplo de un nuevo room agregamos un "pseudo-elemento" llamado "gallery", este es un "atajo" que solo necesitan mínima información para crear una sección completa, en este caso una galería.
+En el ejemplo de un nuevo room agregamos un "pseudo-elemento" llamado "photoGallery", este es un "atajo" que solo necesitan mínima información para crear una sección completa, en este caso una galería.
 Al igual que esta tenemos otros shortcuts, a continuación se enlistan:
 
-- gallery
-    - sirve como contenedor de galleryImages y mainGalleryImage  
-- mainGalleryImage (base, path)
-    - es la imágen principal de la gallería, solo debe haber una por galería
-- galleryImage (base, path)
-    - imágen de una galería, puede haber más de una
-- circleAmenity (base, path, title, [inner])
-    - elemento que incluye una imagen recorada en círculo, un título y una descripción (inner)
-- location (lat, lng, zoom, [inner])
-    - Agrega la sección completa de ubicación con título predefinido, descripción (inner) y un mapa de google con un marcador en el lat, lng dado con el zoom especificado.
+**photoGallery (base, pics)**
 
-### Idiomas
+Genera una galería de imágenes. Recibe como parámetros la base de la URL (base) y la ruta de varías imagenes separadas por coma (se recomienda usar al menos tres), el layout se ajustará atuomáticamente basado en el número de fotos.
+
+```md
+{{< photoGallery 
+base="https://res.cloudinary.com/itermotus/" 
+pics="assets/coralmaya/img/rooms/one-bedroom-cocineta.jpg,assets/coralmaya/img/rooms/one-bedroom2.jpg,assets/coralmaya/img/rooms/one-bedroom.jpg" 
+>}}
+```
+
+**circleAmenity (base, path, title, [inner])**
+
+Elemento que incluye una imagen recorada en círculo, un título y una descripción (inner)
+
+```md
+{{< circleAmenity title="Cenotes" base="https://res.cloudinary.com/itermotus/" path="/assets/coralmaya/img/activities/cenotes.jpg" >}}
+Enjoy a day in the different cenotes of the Riviera Maya.
+{{< /circleAmenity >}}
+```
+
+**location (lat, lng, zoom, [inner])**
+
+Agrega la sección completa de ubicación con título predefinido, descripción (inner) y un mapa de google con un marcador en el lat, lng dado con el zoom especificado.
+
+```md
+{{< location lat="20.504572" lng="-87.217174" zoom="16">}}
+La ubicación le permite la práctica de actividades acuáticas, playa privada y marina.
+{{< /location >}}
+```
+
+**homeAmenity (title, url, base, path, [inner])**
+
+Genera un link con una imagen de fondo, un titulo y una descripción. 
+
+```md
+{{< homeAmenity title="Condominiums" url="/en/condominios/" base="https://res.cloudinary.com/itermotus/" path="/assets/coralmaya/img/rooms/2-bedroom.jpg" >}}
+20 fully equipped Condos for family vacations. 
+{{< /homeAmenity >}}
+```
+
+**homeDeal (sin parámetros)**
+
+Muestra la promoción más reciente.
+
+```md
+{{< homeDeal >}}
+```
+
+**interstitial (btnText, btnURL, [inner])**
+
+Muestra un elemento que incluye una descripción y un botón. 
+
+```md
+{{< interstitial btnText="View promotions" btnURL="/en/deals/">}}
+Take a look at the deals we have for you
+{{< /interstitial >}}
+```
+
+## Parámetros del sitio
+En el sitio se utilizan varios parámetros para su correcto funcionamiento y mostrar cierta información del hotel.
+```toml
+[params]
+  bookerURL = "https://assets.revenatium.com/hotelsoulbeach/es-mx/1.0.17/bundle.js"
+  bookingEngineURL = "https://hotelsoulbeach.revenatium.com/"
+  maps_api_key = "AIzaSyAEPUa9BewKC1YXZp0l1-kNtUK223IAKGM"
+  logoURL = "https://res.cloudinary.com/itermotus/q_auto:low,f_auto/assets/hotelsoulbeach/logo.png"
+  hotelPhone = "+52 9841475888"
+  hotelEmail = "reservaciones@hotelsoulbeach.com"
+  hotelAddress = "Calle 28 número 132 entre 5ta Avenida y Avenida 10, Playa del Carmen"
+  [params.social]
+    [params.social.facebook]
+      icon = "facebook-square"
+      url = "https://www.facebook.com/HotelSoulBeach"
+    [params.social.twitter]
+      icon = "twitter-square"
+      url = "https://www.twitter.com/HotelSoulBeach"
+    [params.social.instagram]
+      icon = "instagram"
+      url = "https://www.instagram.com/HotelSoulBeach"
+```
+
+
+## Idiomas
 El idioma principal del sitio se define en el archivo config.toml
 ```toml
 DefaultContentLanguage = "es"
@@ -139,6 +268,18 @@ Para darle un título a mi página diferente por idioma se debe modificar el arc
    [Languages.en]
       title = "Hotel Flamingos EN"
 ```
+
+También es posible definir otros parámetros con valores distintos por idioma. Por ejemplo, aquí definimos la URL default del widget y una específica para el idioma inglés:
+```toml
+[params]
+  bookerURL = "https://assets.revenatium.com/coralmaya/es-mx/1.0.17/bundle.js"
+  bookingEngineURL = "https://coralmaya.revenatium.com/"
+[Languages]
+   [Languages.en]
+    bookerURL = "https://assets.revenatium.com/coralmaya/en-us/1.0.17/bundle.js"
+    bookingEngineURL = "https://coralmaya-en.revenatium.com/"
+```
+
 **Recursos**
 El tema ya contiene algunos recursos en la carpeta i18n, si se desean agregar mas o sobreescribirlos se debe hacer en una carpeta i18n que se encuentre en la raiz de mi nuevo sitio.
 ### FAQ

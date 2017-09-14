@@ -67,11 +67,14 @@
       <script src="{{.Site.BaseURL}}js/build.js" ></script>
       <script type="text/javascript">
       $(document).ready(function($){
-          $('.gallery-link').magnificPopup({
-            type: 'image',
-            gallery: { 
-              enabled:true
-            }
+          $('.photo-gallery').each(function() {
+              $(this).magnificPopup({
+                  delegate: 'a',
+                  type: 'image',
+                  gallery: {
+                    enabled:true
+                  }
+              });
           });
           {{ if ne .Params.hideBooker true }}
           $('.widget-container').sticky({topSpacing:0});

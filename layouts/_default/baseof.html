@@ -10,7 +10,11 @@
 
       <link rel="canonical" href="{{ .Permalink }}">
 
+      {{ if .Params.meta_title }}
+      <title>{{ .Params.meta_title }}</title>
+      {{ else }}
       <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+      {{ end }}
 
       {{ "<!-- combined, minified CSS -->" | safeHTML }}
       <link href="{{ .Site.BaseURL }}css/build.css" rel="stylesheet">

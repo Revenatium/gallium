@@ -11,6 +11,6 @@ $(document).ready(function($){
 
     $('.photo-gallery').each(function(){$(this).magnificPopup({delegate: 'a',type: 'image',gallery: {enabled:true}});});
     $('.widget-container').sticky({topSpacing:0});
-    $('.carousel').carousel({interval: 2000});
+    $('.carousel').carousel({interval: 4000});
 
 });

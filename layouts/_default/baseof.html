@@ -34,7 +34,7 @@
       </header>
 
       {{if isset .Params "slider" }}
-         <div class="jumbotron carousel slide" data-ride="carousel">
+         <div id="itm-ap-slider" class="jumbotron carousel slide" data-ride="carousel">
             {{ $base := .Params.slider.base }}
             {{ $items := split .Params.slider.pics ","}}
             {{ $len := (len $items) }}
@@ -65,23 +65,13 @@
 
       </div>
       {{ partial "footer.html" . }}
-      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-      <script async src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-      <script src="{{.Site.BaseURL}}externaljs/jquery.sticky.js"></script>
-      <script async src="{{.Site.BaseURL}}externaljs/bootstrap.min.js" ></script>
+
+      <script async src="{{.Site.BaseURL}}js/app.js"></script>
       <script async src="{{.Site.BaseURL}}js/custom.js" ></script>
+      {{ if ne .Params.hideBooker true }}
       {{ with .Site.Params.bookerURL }}<script async src="{{.}}"></script>{{ end }}
-      <script type="text/javascript">
-      $(document).ready(function($){
-          $('.photo-gallery').each(function(){$(this).magnificPopup({delegate: 'a',type: 'image',gallery: {enabled:true}});});
-          {{ if ne .Params.hideBooker true }}
-          $('.widget-container').sticky({topSpacing:0});
-          {{ end }}
-          {{if isset .Params "slider" }}
-          $('.carousel').carousel({interval: 2000})
-          {{ end }}
-      });
-      </script>
+      {{ end }}
+
+
    </body>
 </html>

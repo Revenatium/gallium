@@ -7,8 +7,9 @@
       "build:css": "node-sass --output-style expanded --precision 6 source/scss/main.scss static/css/build.css.tmp && cleancss --level 1 static/css/build.css.tmp -o layouts/partials/build.css",
       "build:fonts": "cp node_modules/font-awesome/fonts/* static/fonts",
       "build:js": "cp node_modules/bootstrap/dist/bootstrap.min.js",
+      "build:wp": "webpack",
       "build:generatesri": "node build/sri.js > data/sri.toml",
-      "build": "npm run build:css && npm run build:fonts && npm run build:generatesri && npm run clean",
+      "build": "npm run build:css && npm run build:fonts && npm run build:wp && npm run clean",
       "clean": "rm static/css/build.css.tmp"
    },
    "repository": {
@@ -22,9 +23,12 @@
    },
    "homepage": "https://github.com/Revenatium/aluminium#readme",
    "dependencies": {
+      "babel-loader": "^7.1.2",
       "bootstrap": "4.0.0-alpha.6",
       "clean-css-cli": "^4.1.6",
+      "exports-loader": "^0.6.4",
       "font-awesome": "^4.7.0",
-      "node-sass": "^4.5.3"
+      "node-sass": "^4.5.3",
+      "webpack": "^3.6.0"
    }
 }

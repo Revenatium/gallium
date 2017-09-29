@@ -7,10 +7,26 @@ import './jquery.magnific-popup';
 
 
 $(document).ready(function($){
-   console.log('soy webpack!');
+   function applyStickyHeader(){
+      if(window.innerWidth >= 768){
+         $('.widget-container').sticky({topSpacing:0});
+      }else{
+         $('.widget-container').unstick();
+      }
+   }
 
-    $('.photo-gallery').each(function(){$(this).magnificPopup({delegate: 'a',type: 'image',gallery: {enabled:true}});});
-    $('.widget-container').sticky({topSpacing:0});
-    $('.carousel').carousel({interval: 4000});
+   $('.photo-gallery').each(function(){
+      $(this).magnificPopup({
+         delegate: 'a',
+         type: 'image',
+         gallery: {enabled:true}
+      });
+   });
+
+   $('.carousel').carousel({interval: 4000});
+   $(window).resize(function() {
+      applyStickyHeader();
+   });
+   applyStickyHeader();
 
 });

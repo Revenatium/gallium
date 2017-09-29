@@ -8,11 +8,11 @@
   padding-top: 1rem;
 
   .carousel-inner {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 0;
   }
   .carousel-item {
@@ -21,7 +21,7 @@
     background-size: cover;
   }
   .banner-content {
-    z-index: 2;
+    z-index: 1;
     position: relative;
   }
 
@@ -29,7 +29,7 @@
     font-size: 22px;
   }
 
-  .lead, 
+  .lead,
   .main-block>p {
       font-size: 28px;
       line-height: 28px;
@@ -77,6 +77,10 @@
 }
 
 .widget-container {
+  min-height: 203px;
+  @media(min-width: 768px){
+     min-height: 148px;
+  }
   background-color: transparent;
   padding-top: 20px;
   -webkit-transition: background-color 0.3s;
@@ -85,7 +89,7 @@
 .is-sticky>.widget-container {
     background-color: #f3f3f3;
     z-index: 100 !important;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3); 
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
 
     .itm-promotion-code-modal-link span {
       color: $brand-color;
@@ -97,7 +101,7 @@
     padding-bottom: 1rem;
     padding-top: 2rem;
 
-    .lead, 
+    .lead,
     .main-block>p {
       font-size: 44px;
       line-height: 50px;

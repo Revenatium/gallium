@@ -1,13 +1,13 @@
 {{ define "main" }}
 <div class="row">
    <div class="col-sm-8">
-	  <form method="POST" action="thank-you" netlify name="contact">
+	  <form method="POST" action="thank-you" netlify name="contact" class="contact-form" novalidate="">
 		<input type="hidden" name="site" value="{{ .Site.BaseURL }}"/>
       	<div class="row">
       		<div class="col-sm-6">
       			<div class="form-group">
       				<label for="name">{{ i18n "name"}} <span class="required text-danger">*</span></label>
-      				<input type="text" name="name" id="name" class="form-control">
+      				<input type="text" name="name" id="name" class="form-control" required>
       			</div>
       		</div>
       		<div class="col-sm-6">
@@ -21,7 +21,7 @@
       		<div class="col-sm-6">
       			<div class="form-group">
       				<label for="email">{{ i18n "email"}} <span class="required text-danger">*</span></label>
-      				<input type="text" name="email" id="email" class="form-control">
+      				<input type="email" name="email" id="email" class="form-control" required>
       			</div>
       		</div>
       		<div class="col-sm-6">
@@ -35,7 +35,7 @@
       		<div class="col-sm-12">
       			<div class="form-group">
 	      			<label for="comments">{{ i18n "comments"}} <span class="required text-danger">*</span></label>
-	      			<textarea name="comments" id="comments" class="form-control" rows="5"></textarea>
+	      			<textarea name="comments" id="comments" class="form-control" rows="5" required></textarea>
       			</div>
       		</div>
       	</div>
@@ -58,4 +58,14 @@
    </div>
 </div>
 {{ .Content }}
+<script>
+window.formMessages = {
+   name: {{ i18n "nameEmptyErrorMsg" }},
+   comments: {{ i18n "commentsEmptyErrorMsg" }},
+   email: {
+      required: {{ i18n "emailEmptyErrorMsg" }},
+      email: {{ i18n "emailInvalidErrorMsg" }}
+    }
+}
+</script>
 {{end}}

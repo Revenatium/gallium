@@ -37,3 +37,11 @@
   background-color: #f3f3f3;
   text-align: center;
 }
+
+.form-control.error {
+    border-color: #a00;
+}
+label.error {
+    font-size: 85%;
+    color: #a00;
+}

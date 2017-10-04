@@ -4,7 +4,7 @@ import 'bootstrap/js/dist/collapse';
 import 'bootstrap/js/dist/carousel';
 import './jquery.sticky';
 import './jquery.magnific-popup';
-
+import './jquery.validate';
 
 $(document).ready(function($){
    function applyStickyHeader(){
@@ -28,5 +28,9 @@ $(document).ready(function($){
       applyStickyHeader();
    });
    applyStickyHeader();
+
+   $('.contact-form').validate({
+      messages: window.formMessages
+   });
 
 });

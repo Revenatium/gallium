@@ -74,5 +74,41 @@
    {
       "id": "viewPromos",
       "translation": "View promotions"
+   },
+   {
+      "id": "nameEmptyErrorMsg",
+      "translation": "Please type your name"
+   },
+   {
+      "id": "commentsEmptyErrorMsg",
+      "translation": "Please type your comments or questions"
+   },
+   {
+      "id": "emailEmptyErrorMsg",
+      "translation": "Please type your email"
+   },
+   {
+      "id": "emailInvalidErrorMsg",
+      "translation": "Please type a valid email address"
+   },
+   {
+      "id": "hotelEmptyErrorMsg",
+      "translation": "Please select a hotel"
+   },
+   {
+      "id": "checkinEmptyErrorMsg",
+      "translation": "Select your check-in date"
+   },
+   {
+      "id": "checkoutEmptyErrorMsg",
+      "translation": "Select your check-out date"
+   },
+   {
+      "id": "roomsEmptyErrorMsg",
+      "translation": "Select the number of rooms"
+   },
+   {
+      "id": "adultsEmptyErrorMsg",
+      "translation": "Select the number of adults"
    }
 ]

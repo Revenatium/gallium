@@ -3,6 +3,7 @@
    <div class="col-sm-8">
 	  <form method="POST" action="thank-you" netlify name="contact" class="contact-form" novalidate="">
 		<input type="hidden" name="site" value="{{ .Site.BaseURL }}"/>
+		<input type="hidden" name="account" value="{{ .Site.account }}"/>
       	<div class="row">
       		<div class="col-sm-6">
       			<div class="form-group">

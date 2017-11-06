@@ -19,8 +19,9 @@ module.exports =  {
          Popper: ['popper.js', 'default'],
          Util: 'exports-loader?Util!bootstrap/js/dist/util',
          Dropdown: 'exports-loader?Dropdown!bootstrap/js/dist/dropdown',
-         Collapse: 'exports-loader?Collapse!bootstrap/js/dist/colapse',
+         Collapse: 'exports-loader?Collapse!bootstrap/js/dist/collapse',
          Carousel: 'exports-loader?Carousel!bootstrap/js/dist/carousel',
+         Tab: 'exports-loader?Carousel!bootstrap/js/dist/tab'
       }),
       new webpack.optimize.UglifyJsPlugin()
    ],

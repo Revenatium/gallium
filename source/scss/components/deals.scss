@@ -34,3 +34,21 @@
 .home-deal .listItem-deal {
     width: 100%;
 }
+.listItem-pic{
+   background-color: #eee;
+   background-position: center top;
+   min-height: 150px !important;
+}
+.listItem-pic--empty:before{
+   content: "\F02B";
+   font-family: FontAwesome;
+   font-size: 200px;
+   text-align: center;
+   display: block;
+   color: #aaa;
+}
+@media (max-width: 575px){
+   .listItem-pic--empty:before{
+      font-size: 100px;
+   }
+}

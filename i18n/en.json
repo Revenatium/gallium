@@ -110,5 +110,9 @@
    {
       "id": "adultsEmptyErrorMsg",
       "translation": "Select the number of adults"
+   },
+   {
+      "id": "promotion",
+      "translation": "Promotion"
    }
 ]

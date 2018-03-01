@@ -114,5 +114,9 @@
    {
       "id": "promotion",
       "translation": "Promotion"
+   },
+   {
+      "id": "roomsUri",
+      "translation": "rooms"
    }
 ]

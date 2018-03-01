@@ -1,19 +1,7 @@
-{{ define "title" }}
-   {{ .Title | markdownify }} | {{ .Site.Title }}
-{{ end }}
-
-{{ define "main" }}
-<div class="row">
-   <div class="col-sm-12">
-      {{ .Content }}
-   </div>
-</div>
-<ul class="list-unstyled list-items">
+<ul class="list-unstyled list-single">
    {{ $promosUrl := .Site.Params.promotionsURL }}
    {{ $deals := getJSON $promosUrl }}
-   {{ range first 10 (where (sort $deals "id" "desc") "isActive" true) }}
+   {{ range first 1 (where (sort $deals "id" "desc") "isActive" true) }}
       {{ partial "autoDeal" (dict "deal" . "bookingEngineURL" $.Site.Params.bookingEngineURL "imageBase" $.Site.Params.imageBase "imageBucket" $.Site.Params.imageBucket "showHotel" $.Site.Params.promotionsShowHotel) }}
    {{ end }}
 </ul>
-
-{{ end }}

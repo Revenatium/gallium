@@ -1,6 +1,7 @@
 {{ $base := .imageBase }}
 {{ $bucket := .imageBucket }}
-{{ $bookingEngineURL := .bookingEngineURL}}
+{{ $bookingEngineURL := .bookingEngineURL }}
+{{ $showHotel := .showHotel}}
 <li class="listItem listItem-deal">
    {{ with .deal}}
    <div class="listItem-content">
@@ -24,10 +25,11 @@
       {{end}}
       <div class="listItem-info">
          {{ if .title}}
-         <h2 class="listItem-title">{{ .title | markdownify }}</h2>
+         <h2 class="listItem-title">{{ .title | markdownify }} {{ if and $showHotel .hotel }}<div class="listItem-subtitle">{{.hotel.name}}</div>{{end}}</h2>
          {{else}}
-         <h2 class="listItem-title">{{ i18n "promotion" }}</h2>
+         <h2 class="listItem-title">{{ i18n "promotion" }} {{ if and $showHotel .hotel }}<div class="listItem-subtitle">{{.hotel.name}}</div>{{end}}</h2>
          {{end}}
+         
          <div class="listItem-shortDesc">
             <div class="deal-includes">
                <ul class="list-unstyled">
@@ -55,7 +57,11 @@
             </div>
          </div>
          <div class="listItem-actions">
+            {{ if and $showHotel .hotel }}
+            <a href="{{ $bookingEngineURL }}#/s/{{ .hotel.id }}/{{ i18n "roomsUri"}}" class="btn btn-primary">{{ i18n "bookNow"}}</a>
+            {{ else }}
             <a href="{{ $bookingEngineURL }}" class="btn btn-primary">{{ i18n "bookNow"}}</a>
+            {{end}}
          </div>
       </div>
    </div>

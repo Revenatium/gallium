@@ -20,6 +20,10 @@ Para ver en el navegador
 ```sh
 hugo server -D
 ```
+## Si haces checkout del sitio y este ya contiene el submodulo del tema.
+```sh
+git submodule update --init --recursive
+```
 **A partir de ahora ya puedo comenzar a agregar contenido al sitio**
 
 ### Home

@@ -32,6 +32,9 @@
          
          <div class="listItem-shortDesc">
             <div class="deal-includes">
+               {{ if .description }}
+               <blockquote>{{ .description | markdownify }}</blockquote>
+               {{ end }}
                <ul class="list-unstyled">
                   {{ range .importantDates }}
                      <li>{{ . }}</li>

@@ -21,7 +21,7 @@ module.exports =  {
          Dropdown: 'exports-loader?Dropdown!bootstrap/js/dist/dropdown',
          Collapse: 'exports-loader?Collapse!bootstrap/js/dist/collapse',
          Carousel: 'exports-loader?Carousel!bootstrap/js/dist/carousel',
-         Tab: 'exports-loader?Carousel!bootstrap/js/dist/tab'
+         Tab: 'exports-loader?Tab!bootstrap/js/dist/tab'
       }),
       new webpack.optimize.UglifyJsPlugin()
    ],

@@ -23,10 +23,14 @@
       <style>{{ readFile "/static/css/custom.css" | safeCSS }}</style>
 
       {{ template "_internal/google_analytics_async.html" . }}
+      
+      {{ partial "googleTagManagerHeader.html" . }}
+
       {{ partial "head-custom.html" . }}
    </head>
 
    <body>
+         {{ partial "googleTagManagerBody.html" . }}
       <header>
          {{ partial "header.html" . }}
 

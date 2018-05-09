@@ -7,7 +7,7 @@
 <div class="row listItem listItem-deal">
    {{if .photos }}
    {{ $image := index .photos 0 }}
-   <div class="col-sm-4 listItem-pic" style="background-image: url( {{ print $base "q_auto:good,f_auto,h_400,c_fill/" $bucket "/" $image.path }})">
+   <div class="listItem-pic" style="background-image: url( {{ print $base "q_auto:good,f_auto,h_400,c_fill/" $bucket "/" $image.path }})">
       {{ if and (.discountPercentage) (gt .discountPercentage 0) }}
       <p class="discount-amount">
          {{ mul .discountPercentage 100 }}%
@@ -15,7 +15,7 @@
       {{ end }}
    </div>
    {{else}}
-   <div class="col-sm-4 listItem-pic listItem-pic--empty">
+   <div class="listItem-pic listItem-pic--empty">
          {{ if and (.discountPercentage) (gt .discountPercentage 0) }}
          <p class="discount-amount">
             {{ mul .discountPercentage 100 }}%
@@ -23,7 +23,7 @@
          {{ end }}
       </div>
    {{end}}
-   <div class="col-sm-8 listItem-info">
+   <div class="listItem-info">
       {{ if .title}}
       <h2 class="listItem-title">{{ .title | markdownify }} {{ if and $showHotel .hotel }}<div class="listItem-subtitle">{{.hotel.name}}</div>{{end}}</h2>
       {{else}}

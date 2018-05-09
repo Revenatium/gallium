@@ -36,22 +36,21 @@
     }
 }
 
-/*.list-items .listItem {
-    .listItem-content {
-        @extend .row;
-    }
+.list-items .listItem {
     .listItem-info {
         @extend .col-sm-8;
     }
     .listItem-pic {
         @extend .col-sm-4;
     }
-}*/
+    .listItem-details {
+        @extend .col-sm-12;
+    }
+}
 
 .list-single .listItem {
     .listItem-info {
         padding: 20px;
-
         .btn-primary {
             display: block;
         }

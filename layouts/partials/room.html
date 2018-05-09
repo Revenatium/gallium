@@ -1,25 +1,24 @@
 {{ $base := .Params.Image.base }}
 {{ $path := .Params.Image.path }}
-<li class="listItem listItem-room">
-   <div class="listItem-content">
-      <div class="listItem-pic" style="background-image: url({{print $base "q_auto:low,f_auto,w_350,h_200,c_fill/" $path}})">
+
+<div class="row listItem listItem-room">
+   <div class="col-sm-4 listItem-pic" style="background-image: url({{print $base "q_auto:low,f_auto,w_350,h_200,c_fill/" $path}})">
+   </div>
+   <div class="col-sm-8 listItem-info">
+      <h2 class="listItem-title">{{ .Title | markdownify }}</h2>
+      <div class="listItem-data">
+         <div class="room-data-pax"><i class="fa fa-user mr-1"></i>{{ .Params.Pax }}</div>
+         <div class="room-data-bed"><i class="fa fa-bed mr-1"></i>{{ .Params.Bedding }}</div>
       </div>
-      <div class="listItem-info">
-         <h2 class="listItem-title">{{ .Title | markdownify }}</h2>
-         <div class="listItem-data">
-            <div class="room-data-pax"><i class="fa fa-user mr-1"></i>{{ .Params.Pax }}</div>
-            <div class="room-data-bed"><i class="fa fa-bed mr-1"></i>{{ .Params.Bedding }}</div>
-         </div>
-         <div class="listItem-shortDesc">
-            {{ .Params.Description  | safeHTML | truncate 150 }}
-         </div>
-         <div class="listItem-actions">
-            <a href="{{ .Site.Params.bookingEngineURL }}" class="btn btn-primary">{{ i18n "bookNow"}}</a>
-            <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#room{{.Params.Id}}">{{ i18n "roomDetails"}}</button>
-         </div>
+      <div class="listItem-shortDesc">
+         {{ .Params.Description  | safeHTML | truncate 150 }}
+      </div>
+      <div class="listItem-actions">
+         <a href="{{ .Site.Params.bookingEngineURL }}" class="btn btn-primary">{{ i18n "bookNow"}}</a>
+         <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#room{{.Params.Id}}">{{ i18n "roomDetails"}}</button>
       </div>
    </div>
-   <div class="listItem-details collapse" id="room{{.Params.Id}}">
+   <div class="col-sm-12 listItem-details collapse" id="room{{.Params.Id}}">
       <div class="lead">{{ .Params.Description }}</div>{{ .Content }}
    </div>
-</li>
+</div>

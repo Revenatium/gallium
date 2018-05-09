@@ -8,12 +8,12 @@
       {{ .Content }}
    </div>
 </div>
-<ul class="list-unstyled list-items">
-   {{ $roomsUrl := .Site.Params.roomsURL }}
-   {{ $rooms := getJSON $roomsUrl }}
-   {{ range first 10 (where (sort $rooms "id" "desc") "isActive" true) }}
-      {{ partial "autoRoom" (dict "room" . "bookingEngineURL" $.Site.Params.bookingEngineURL "imageBase" $.Site.Params.imageBase "imageBucket" $.Site.Params.imageBucket) }}
-   {{ end }}
-</ul>
+
+{{ $roomsUrl := .Site.Params.roomsURL }}
+{{ $rooms := getJSON $roomsUrl }}
+{{ range first 10 (where (sort $rooms "id" "desc") "isActive" true) }}
+   {{ partial "autoRoom" (dict "room" . "bookingEngineURL" $.Site.Params.bookingEngineURL "imageBase" $.Site.Params.imageBase "imageBucket" $.Site.Params.imageBucket) }}
+{{ end }}
+
 
 {{ end }}

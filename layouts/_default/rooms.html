@@ -3,11 +3,11 @@
 {{ end }}
 
 {{ define "main" }}
-<ul class="list-unstyled list-items">
-   {{ range where .Site.RegularPages "Type" "==" "rooms" }}
-      {{partial "room" . }}
-   {{ end }}
-</ul>
+
+{{ range where .Site.RegularPages "Type" "==" "rooms" }}
+   {{partial "room" . }}
+{{ end }}
+
 <div class="row">
    <div class="col-sm-12">
       {{ .Content }}

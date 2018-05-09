@@ -8,10 +8,10 @@
       {{ .Content }}
    </div>
 </div>
-<ul class="list-unstyled list-items">
-   {{ range where .Site.RegularPages.ByWeight "Type" "==" "deals" }}
-      {{partial "deal" . }}
-   {{ end }}
-</ul>
+
+{{ range where .Site.RegularPages.ByWeight "Type" "==" "deals" }}
+   {{partial "deal" . }}
+{{ end }}
+
 
 {{ end }}

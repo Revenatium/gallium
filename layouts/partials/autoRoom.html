@@ -1,39 +1,38 @@
 {{ $base := .imageBase }}
 {{ $bucket := .imageBucket }}
 {{ $bookingEngineURL := .bookingEngineURL }}
-<li class="listItem listItem-room">
-   {{ with .room}}
-   <div class="listItem-content">
-      {{if .photos }}
-         {{ $image := index .photos 0 }}
-      <div class="listItem-pic" style="background-image: url( {{ print $base "q_auto:good,f_auto,h_400,c_fill/" $bucket "/" $image.path }})">
-      </div>
-      {{ else }}
-      <div class="listItem-pic listItem-pic--empty">
-      </div>
-      {{ end}}
-      <div class="listItem-info">
-         <h2 class="listItem-title">{{ .name | markdownify }}</h2>
-         <div class="listItem-data">
-            {{ if .capacity }}
-            <div class="room-data-pax"><i class="fa fa-user mr-1"></i>{{ .capacity }}</div>
-            {{ end }}
-            {{ if .bedding }}
-            <div class="room-data-bed"><i class="fa fa-bed mr-1"></i>{{ .bedding }}</div>
-            {{ end }}
-         </div>
-         {{ if .description }}
-         <div class="listItem-shortDesc">
-            {{ .description  | safeHTML | truncate 150 }}
-         </div>
+
+{{ with .room}}
+<div class="row listItem listItem-room">
+   {{if .photos }}
+      {{ $image := index .photos 0 }}
+   <div class="col-sm-4 listItem-pic" style="background-image: url( {{ print $base "q_auto:good,f_auto,h_400,c_fill/" $bucket "/" $image.path }})">
+   </div>
+   {{ else }}
+   <div class="col-sm-4 listItem-pic listItem-pic--empty">
+   </div>
+   {{ end}}
+   <div class="col-sm-8 listItem-info">
+      <h2 class="listItem-title">{{ .name | markdownify }}</h2>
+      <div class="listItem-data">
+         {{ if .capacity }}
+         <div class="room-data-pax"><i class="fa fa-user mr-1"></i>{{ .capacity }}</div>
          {{ end }}
-         <div class="listItem-actions">
-            <a href="{{ $bookingEngineURL }}" class="btn btn-primary">{{ i18n "bookNow"}}</a>
-            <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#room{{.id}}">{{ i18n "roomDetails"}}</button>
-         </div>
+         {{ if .bedding }}
+         <div class="room-data-bed"><i class="fa fa-bed mr-1"></i>{{ .bedding }}</div>
+         {{ end }}
+      </div>
+      {{ if .description }}
+      <div class="listItem-shortDesc">
+         {{ .description  | safeHTML | truncate 150 }}
+      </div>
+      {{ end }}
+      <div class="listItem-actions">
+         <a href="{{ $bookingEngineURL }}" class="btn btn-primary">{{ i18n "bookNow"}}</a>
+         <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#room{{.id}}">{{ i18n "roomDetails"}}</button>
       </div>
    </div>
-   <div class="listItem-details collapse" id="room{{.id}}">
+   <div class="col-sm-12 listItem-details collapse" id="room{{.id}}">
       <div class="lead">{{ .description }}</div>
       {{ $items := .photos}}
       {{ $len := (len $items) }}
@@ -64,5 +63,5 @@
          </ul>
       </div>
    </div>
-   {{ end }}
-</li>
+</div>
+{{ end }}

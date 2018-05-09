@@ -8,12 +8,11 @@
       {{ .Content }}
    </div>
 </div>
-<ul class="list-unstyled list-items">
-   {{ $promosUrl := .Site.Params.promotionsURL }}
-   {{ $deals := getJSON $promosUrl }}
-   {{ range first 10 (where (sort $deals "id" "desc") "isActive" true) }}
-      {{ partial "autoDeal" (dict "deal" . "bookingEngineURL" $.Site.Params.bookingEngineURL "imageBase" $.Site.Params.imageBase "imageBucket" $.Site.Params.imageBucket "showHotel" $.Site.Params.promotionsShowHotel) }}
-   {{ end }}
-</ul>
+
+{{ $promosUrl := .Site.Params.promotionsURL }}
+{{ $deals := getJSON $promosUrl }}
+{{ range first 10 (where (sort $deals "id" "desc") "isActive" true) }}
+   {{ partial "autoDeal" (dict "deal" . "bookingEngineURL" $.Site.Params.bookingEngineURL "imageBase" $.Site.Params.imageBase "imageBucket" $.Site.Params.imageBucket "showHotel" $.Site.Params.promotionsShowHotel) }}
+{{ end }}
 
 {{ end }}

@@ -2,71 +2,70 @@
 {{ $bucket := .imageBucket }}
 {{ $bookingEngineURL := .bookingEngineURL }}
 {{ $showHotel := .showHotel}}
-<li class="listItem listItem-deal">
-   {{ with .deal}}
-   <div class="listItem-content">
-      {{if .photos }}
-      {{ $image := index .photos 0 }}
-      <div class="listItem-pic" style="background-image: url( {{ print $base "q_auto:good,f_auto,h_400,c_fill/" $bucket "/" $image.path }})">
+
+{{ with .deal}}
+<div class="row listItem listItem-deal">
+   {{if .photos }}
+   {{ $image := index .photos 0 }}
+   <div class="col-sm-4 listItem-pic" style="background-image: url( {{ print $base "q_auto:good,f_auto,h_400,c_fill/" $bucket "/" $image.path }})">
+      {{ if and (.discountPercentage) (gt .discountPercentage 0) }}
+      <p class="discount-amount">
+         {{ mul .discountPercentage 100 }}%
+      </p>
+      {{ end }}
+   </div>
+   {{else}}
+   <div class="col-sm-4 listItem-pic listItem-pic--empty">
          {{ if and (.discountPercentage) (gt .discountPercentage 0) }}
          <p class="discount-amount">
             {{ mul .discountPercentage 100 }}%
          </p>
          {{ end }}
       </div>
+   {{end}}
+   <div class="col-sm-8 listItem-info">
+      {{ if .title}}
+      <h2 class="listItem-title">{{ .title | markdownify }} {{ if and $showHotel .hotel }}<div class="listItem-subtitle">{{.hotel.name}}</div>{{end}}</h2>
       {{else}}
-      <div class="listItem-pic listItem-pic--empty">
-            {{ if and (.discountPercentage) (gt .discountPercentage 0) }}
-            <p class="discount-amount">
-               {{ mul .discountPercentage 100 }}%
-            </p>
-            {{ end }}
-         </div>
+      <h2 class="listItem-title">{{ i18n "promotion" }} {{ if and $showHotel .hotel }}<div class="listItem-subtitle">{{.hotel.name}}</div>{{end}}</h2>
       {{end}}
-      <div class="listItem-info">
-         {{ if .title}}
-         <h2 class="listItem-title">{{ .title | markdownify }} {{ if and $showHotel .hotel }}<div class="listItem-subtitle">{{.hotel.name}}</div>{{end}}</h2>
-         {{else}}
-         <h2 class="listItem-title">{{ i18n "promotion" }} {{ if and $showHotel .hotel }}<div class="listItem-subtitle">{{.hotel.name}}</div>{{end}}</h2>
-         {{end}}
-         
-         <div class="listItem-shortDesc">
-            <div class="deal-includes">
-               {{ if .description }}
-               <blockquote>{{ .description | markdownify }}</blockquote>
-               {{ end }}
-               <ul class="list-unstyled">
-                  {{ range .importantDates }}
-                     <li>{{ . }}</li>
-                  {{ end }}
-               </ul>
-               <p><strong>{{ i18n "dealIncludes"}}</strong></p>
-               <ul>
-                  {{ range .includesDescription }}
+      
+      <div class="listItem-shortDesc">
+         <div class="deal-includes">
+            {{ if .description }}
+            <blockquote>{{ .description | markdownify }}</blockquote>
+            {{ end }}
+            <ul class="list-unstyled">
+               {{ range .importantDates }}
                   <li>{{ . }}</li>
-                  {{ end }}
-               </ul>
-               <div class="deal-conditions dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <small>{{ i18n "dealTerms"}}</small></a>
-                  <div class="dropdown-menu">
-                     <ul>
-                        {{ range .termsAndConditions}}
-                        <li>{{ . }}</li>
-                        {{ end }}
-                     </ul>
-                  </div>
+               {{ end }}
+            </ul>
+            <p><strong>{{ i18n "dealIncludes"}}</strong></p>
+            <ul>
+               {{ range .includesDescription }}
+               <li>{{ . }}</li>
+               {{ end }}
+            </ul>
+            <div class="deal-conditions dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <small>{{ i18n "dealTerms"}}</small></a>
+               <div class="dropdown-menu">
+                  <ul>
+                     {{ range .termsAndConditions}}
+                     <li>{{ . }}</li>
+                     {{ end }}
+                  </ul>
                </div>
             </div>
          </div>
-         <div class="listItem-actions">
-            {{ if and $showHotel .hotel }}
-            <a href="{{ $bookingEngineURL }}#/s/{{ .hotel.id }}/{{ i18n "roomsUri"}}" class="btn btn-primary">{{ i18n "bookNow"}}</a>
-            {{ else }}
-            <a href="{{ $bookingEngineURL }}" class="btn btn-primary">{{ i18n "bookNow"}}</a>
-            {{end}}
-         </div>
+      </div>
+      <div class="listItem-actions">
+         {{ if and $showHotel .hotel }}
+         <a href="{{ $bookingEngineURL }}#/s/{{ .hotel.id }}/{{ i18n "roomsUri"}}" class="btn btn-primary">{{ i18n "bookNow"}}</a>
+         {{ else }}
+         <a href="{{ $bookingEngineURL }}" class="btn btn-primary">{{ i18n "bookNow"}}</a>
+         {{end}}
       </div>
    </div>
-   {{end}}
-</li>
+</div>
+{{end}}

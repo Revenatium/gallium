@@ -1,52 +1,51 @@
 {{ $base := .Params.Image.base }}
 {{ $path := .Params.Image.path }}
-<li class="listItem listItem-deal">
-   <div class="listItem-content">
-      <div class="listItem-pic" style="background-image: url({{print $base "q_auto:good,f_auto,w_350,h_200,c_fill/" $path}})">
-         {{ if or .Params.DiscountAmount .Params.discountText}}
-         <p class="discount-amount">
-         	<strong>{{ .Params.DiscountAmount }}</strong>
-         	{{ if .Params.discountText}}
-         		{{ .Params.discountText}}
-         	{{ else }}
-         		{{ i18n "dealDiscount"}}
-         	{{ end }}
-         </p>
+
+<div class="row listItem listItem-deal">
+   <div class="col-sm-4 listItem-pic" style="background-image: url({{print $base "q_auto:good,f_auto,w_350,h_200,c_fill/" $path}})">
+      {{ if or .Params.DiscountAmount .Params.discountText}}
+      <p class="discount-amount">
+         <strong>{{ .Params.DiscountAmount }}</strong>
+         {{ if .Params.discountText}}
+            {{ .Params.discountText}}
+         {{ else }}
+            {{ i18n "dealDiscount"}}
+         {{ end }}
+      </p>
+      {{ end }}
+   </div>
+   <div class="col-sm-8 listItem-info">
+      <h2 class="listItem-title">{{ .Title | markdownify }}</h2>
+      <div class="listItem-shortDesc">
+         <div class="deal-includes">
+         {{ if .Params.Description }}
+            <p>{{ .Params.Description }}</p>
+         {{ end }}
+         {{ if .Params.Includes }}
+            <p><strong>{{ i18n "dealIncludes"}}</strong></p>
+            <ul>
+               {{range .Params.Includes}}
+                  <li>{{ . }}</li>
+               {{ end }}
+            </ul>
+            {{ end }}
+         </div>
+         {{ if .Params.Conditions }}
+         <div class="deal-conditions dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <small>{{ i18n "dealTerms"}}</small></a>
+            <div class="dropdown-menu">
+               <ul>
+               {{range .Params.Conditions}}
+                  <li>{{ . }}</li>
+               {{ end }}
+               </ul>
+            </div>
+         </div>
          {{ end }}
       </div>
-      <div class="listItem-info">
-         <h2 class="listItem-title">{{ .Title | markdownify }}</h2>
-         <div class="listItem-shortDesc">
-	        <div class="deal-includes">
-	        	{{ if .Params.Description }}
-	        		<p>{{ .Params.Description }}</p>
-	        	{{ end }}
-	        	{{ if .Params.Includes }}
-	         	<p><strong>{{ i18n "dealIncludes"}}</strong></p>
-	         	<ul>
-		         	{{range .Params.Includes}}
-		         		<li>{{ . }}</li>
-		         	{{ end }}
-		        </ul>
-	         	{{ end }}
-	         </div>
-	         {{ if .Params.Conditions }}
-	         <div class="deal-conditions dropdown">
-	         	<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	         	<small>{{ i18n "dealTerms"}}</small></a>
-	         	<div class="dropdown-menu">
-	         		<ul>
-		         	{{range .Params.Conditions}}
-		         		<li>{{ . }}</li>
-		         	{{ end }}
-	         		</ul>
-	         	</div>
-	         </div>
-	         {{ end }}
-	     </div>
-         <div class="listItem-actions">
-            <a href="{{ .Site.Params.bookingEngineURL }}" class="btn btn-primary">{{ i18n "bookNow"}}</a>
-         </div>
+      <div class="listItem-actions">
+         <a href="{{ .Site.Params.bookingEngineURL }}" class="btn btn-primary">{{ i18n "bookNow"}}</a>
       </div>
    </div>
 </li>

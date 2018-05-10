@@ -1,5 +1,5 @@
-<ul class="list-unstyled list-single">
+<div class="list-single">
 {{ range first 1 (where .Site.RegularPages.ByWeight "Type" "==" "deals") }}
 	{{partial "deal" . }}
 {{ end }}
-</ul>
+</div>

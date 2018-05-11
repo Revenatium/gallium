@@ -10,7 +10,7 @@
    <div class="listItem-pic" style="background-image: url( {{ print $base "q_auto:good,f_auto,h_400,c_fill/" $bucket "/" $image.path }})">
       {{ if and (.discountPercentage) (gt .discountPercentage 0) }}
       <p class="discount-amount">
-         {{ mul .discountPercentage 100 }}%
+         {{ .discountPercentageComplete }}
       </p>
       {{ end }}
    </div>

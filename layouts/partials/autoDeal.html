@@ -16,12 +16,12 @@
    </div>
    {{else}}
    <div class="listItem-pic listItem-pic--empty">
-         {{ if and (.discountPercentage) (gt .discountPercentage 0) }}
-         <p class="discount-amount">
-            {{ mul .discountPercentage 100 }}%
-         </p>
-         {{ end }}
-      </div>
+      {{ if and (.discountPercentage) (gt .discountPercentage 0) }}
+      <p class="discount-amount">
+         {{ .discountPercentageComplete }}
+      </p>
+      {{ end }}
+   </div>
    {{end}}
    <div class="listItem-info">
       {{ if .title}}

@@ -9,7 +9,7 @@ import './jquery.magnific-popup';
 import './jquery.validate';
 
 $(document).ready(function($){
-   function applyStickyHeader(){
+   function window.applyStickyHeader(){
       if(window.innerWidth >= 768){
          $('.widget-container').sticky({topSpacing:0});
       }else{
@@ -27,9 +27,9 @@ $(document).ready(function($){
 
    $('.carousel').carousel({interval: 4000});
    $(window).resize(function() {
-      applyStickyHeader();
+      window.applyStickyHeader();
    });
-   applyStickyHeader();
+   window.applyStickyHeader();
 
    $('.contact-form').validate({
       messages: window.formMessages

@@ -7,7 +7,7 @@
 <div class="row listItem listItem-deal">
    {{if .photos }}
    {{ $image := index .photos 0 }}
-   <div class="listItem-pic" style="background-image: url( {{ print $base "q_auto:good,f_auto,h_400,c_fill/" $bucket "/" $image.path }})">
+   <div class="listItem-pic" style="background-image: url( {{ print $base "f_auto,h_400,c_fill/" $bucket "/" $image.path }})">
       {{ if and (.discountPercentage) (gt .discountPercentage 0) }}
       <p class="discount-amount">
          {{ .discountPercentageComplete }}

@@ -9,7 +9,7 @@ import './jquery.magnific-popup';
 import './jquery.validate';
 
 $(document).ready(function($){
-   function window.applyStickyHeader(){
+   window.applyStickyHeader = function(){
       if(window.innerWidth >= 768){
          $('.widget-container').sticky({topSpacing:0});
       }else{

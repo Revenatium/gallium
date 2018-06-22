@@ -10,6 +10,10 @@
 
       <link rel="canonical" href="{{ .Permalink }}">
 
+      {{ if .Site.Params.bookingEngineURL }}
+      <link rel="prefetch" href="{{ .Site.Params.bookingEngineURL }}">
+      {{ end }}
+
       {{ if .Params.meta_title }}
       <title>{{ .Params.meta_title }}</title>
       {{ else }}

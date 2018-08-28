@@ -13,7 +13,9 @@
    </div>
    {{ end}}
    <div class="listItem-info">
-      <h2 class="listItem-title">{{ .name | markdownify }}</h2>
+      {{ with .name }}
+      <h2 class="listItem-title">{{ . | markdownify }}</h2>
+      {{ end}}
       <div class="listItem-data">
          {{ if .capacity }}
          <div class="room-data-pax"><i class="fa fa-user mr-1"></i>{{ .capacity }}</div>

@@ -45,3 +45,11 @@ label.error {
     font-size: 85%;
     color: #a00;
 }
+
+@media (min-width: 768px) {
+  .guests-selector .itm-popover-body {
+    max-height: 430px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}

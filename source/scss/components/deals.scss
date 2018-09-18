@@ -30,30 +30,41 @@
             font-weight: normal;
         }
     }
+    .listItem-pic{
+      min-height: 129px !important;
+      height: 194px;
+      @media (min-width: 768px) {
+         height: 129px;  
+      }
+      @media (min-width: 992px) {
+         height: 174px;  
+      }
+      @media (min-width: 1200px) {
+         height: 208px;  
+      }
+      @media (max-width: 767px){
+         background-size: contain;
+         background-repeat: no-repeat;
+      }
+   }
+   .listItem-pic--empty:before{
+      content: "\F02B";
+      font-family: FontAwesome;
+      text-align: center;
+      display: block;
+      color: #aaa;
+      font-size: 140px;
+      @media (min-width: 768px) {
+         font-size: 90px;  
+      }
+      @media (min-width: 992px) {
+         font-size: 125px;  
+      }
+      @media (min-width: 1200px) {
+         font-size: 150px;  
+      }
+   }
 }
 .home-deal .listItem-deal {
     width: 100%;
-}
-.listItem-pic{
-   background-color: #eee;
-   background-position: center top;
-   min-height: 150px !important;
-}
-.listItem-pic--empty:before{
-   content: "\F02B";
-   font-family: FontAwesome;
-   font-size: 200px;
-   text-align: center;
-   display: block;
-   color: #aaa;
-}
-.listItem-subtitle{
-   color: #999;
-   font-size: 65%;
-   font-weight: normal;
-}
-@media (max-width: 575px){
-   .listItem-pic--empty:before{
-      font-size: 100px;
-   }
 }

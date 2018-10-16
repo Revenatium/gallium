@@ -45,4 +45,7 @@ $fa-font-path: "/fonts";
 .#{$fa-css-prefix}-pinterest-square:before { content: $fa-var-pinterest-square; }
 .#{$fa-css-prefix}-pinterest:before { content: $fa-var-pinterest; }
 .#{$fa-css-prefix}-tripadvisor:before { content: $fa-var-tripadvisor; }
+.#{$fa-css-prefix}-plus:before { content: $fa-var-plus; }
+.#{$fa-css-prefix}-minus:before { content: $fa-var-minus; }
+.#{$fa-css-prefix}-building-o:before { content: $fa-var-building-o; }
 @import "node_modules/font-awesome/scss/screen-reader";

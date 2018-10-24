@@ -1,7 +1,7 @@
 <div class="list-single">
    {{ $promosUrl := .Site.Params.promotionsURL }}
    {{ $deals := getJSON $promosUrl }}
-   {{ range first 1 (where (sort $deals "id" "desc") "isActive" true) }}
+   {{ range first 1 (where $deals "isActive" true) }}
       {{ partial "autoDeal" (dict "deal" . "bookingEngineURL" $.Site.Params.bookingEngineURL "imageBase" $.Site.Params.imageBase "imageBucket" $.Site.Params.imageBucket "showHotel" $.Site.Params.promotionsShowHotel) }}
    {{ end }}
 </div>

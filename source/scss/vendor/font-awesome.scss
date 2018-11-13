@@ -48,4 +48,6 @@ $fa-font-path: "/fonts";
 .#{$fa-css-prefix}-plus:before { content: $fa-var-plus; }
 .#{$fa-css-prefix}-minus:before { content: $fa-var-minus; }
 .#{$fa-css-prefix}-building-o:before { content: $fa-var-building-o; }
+.#{$fa-css-prefix}-whatsapp:before { content: $fa-var-whatsapp; }
+.#{$fa-css-prefix}-whatsapp-square:before { content: $fa-var-whatsapp-square; }
 @import "node_modules/font-awesome/scss/screen-reader";

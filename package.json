@@ -1,5 +1,5 @@
 {
-   "name": "aluminium",
+   "name": "gallium",
    "version": "1.0.0",
    "description": "hugo theme",
    "main": "index.js",
@@ -14,20 +14,22 @@
    },
    "repository": {
       "type": "git",
-      "url": "git+https://github.com/Revenatium/aluminium.git"
+      "url": "git+https://github.com/Revenatium/gallium.git"
    },
    "author": "Revenatium",
    "license": "ISC",
    "bugs": {
-      "url": "https://github.com/Revenatium/aluminium/issues"
+      "url": "https://github.com/Revenatium/gallium/issues"
    },
-   "homepage": "https://github.com/Revenatium/aluminium#readme",
+   "homepage": "https://github.com/Revenatium/gallium#readme",
    "dependencies": {
-      "bootstrap": "4.0.0-alpha.6",
+      "bootstrap": "4.1.2",
       "clean-css-cli": "^4.1.6",
       "exports-loader": "^0.6.4",
       "font-awesome": "^4.7.0",
+      "jquery": "1.9.1",
       "node-sass": "^4.5.3",
+      "popper.js": "1.14.3",
       "webpack": "^3.6.0"
    },
    "devDependencies": {

@@ -1,5 +1,17 @@
 <div class="clearfix top-bar">
 	<div class="container">
+      {{ if eq .Lang "en" }}
+        <a class="navbar-brand" href="/en">
+      {{ else }}
+        <a class="navbar-brand" href="{{ .Site.BaseURL | absLangURL }}">
+      {{ end }}
+      {{ if .Site.Params.logoURL }}
+         <img src="{{ .Site.Params.logoURL }}" alt="{{ .Site.Title | safeHTML }}">
+      {{ else }}
+         {{ .Site.Title | safeHTML }}
+      {{ end }}
+        </a>
+
 		<div class="float-left top-bar-contact">
 			{{ with .Site.Params.hotelPhone }}<span class="hotel-phone"><i class="fa fa-phone"></i> {{.}}</span>{{ end }}
 			{{ with .Site.Params.hotelEmail }}<a href="mailto:{{.}}" class="hotel-email"><i class="fa fa-envelope"></i> {{.}}</a>{{ end }}
@@ -16,5 +28,16 @@
 			</div>
 		</div>
 		{{ end }}
+
+		{{ if .Site.Menus.top }}
+		<ul class="float-right nav nav-top">
+		{{ range .Site.Menus.top }}
+		<li class="">
+		   <a  href="{{.URL | absURL }}">{{ .Name }}</a>
+		</li>
+		{{ end }}
+		</ul>
+		{{ end }}
+		
 	</div>
 </div>

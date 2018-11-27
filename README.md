@@ -1,4 +1,4 @@
-# aluminium
+# gallium
 Hugo Template
 
 ### CÃ³mo instalar?
@@ -10,11 +10,11 @@ Dentro de la carpeta del nuevo sitio, inicio git e instalo el tema como un submÃ
 ```sh
 cd my-hugo-site
 git init
-git submodule add https://github.com/Revenatium/aluminium.git themes/aluminium
+git submodule add https://github.com/Revenatium/gallium.git themes/gallium
 ```
 Y finalmente modifico el config.toml para que use el nuevo tema
 ```sh
-echo 'theme = "aluminium"' >> config.toml
+echo 'theme = "gallium"' >> config.toml
 ```
 Para ver en el navegador
 ```sh

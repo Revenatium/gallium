@@ -1,13 +1,10 @@
-<div class="banner-content">
+<div class="banner-content{{if (not (isset .Params "featured_image"))}} no-bg{{ end }}{{if (not (isset .Params "description"))}} no-tagline{{ end }}">
 	<div class="container">
+      <div class="banner-info">
        <h1>{{ .Title | markdownify }}</h1>
+       {{if isset .Params "description"}}
        <p class="lead">{{ .Description | markdownify }}</p>
-    </div>
-    {{ if ne .Params.hideBooker true }}
-    <div class="widget-container">
-       <div class="container">
-          <div id="rvm-booker-container" class="itm-booker itm-booker-horizontal"></div>
-       </div>
-    </div>
-    {{ end }}
+       {{ end }}
+      </div>
+  </div>
 </div>

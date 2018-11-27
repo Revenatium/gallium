@@ -3,15 +3,8 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
          <span class="fa fa-bars"></span>
       </button>
-      <a class="navbar-brand" href="{{ .Site.BaseURL | absLangURL }}">
-      {{ if .Site.Params.logoURL }}
-         <img src="{{ .Site.Params.logoURL }}" alt="{{ .Site.Title | safeHTML }}">
-      {{ else }}
-         {{ .Site.Title | safeHTML }}
-      {{ end }}
-      </a>
       <div class="collapse navbar-collapse" id="navbarNav">
-         <ul class="navbar-nav ml-auto">
+         <ul class="navbar-nav mr-auto">
             {{- $currentURL := .URL | absLangURL -}}
             {{ if .Site.Params.custom_navbar }}
                {{ range .Site.Menus.main }}
@@ -22,7 +15,13 @@
                {{ end }}
             {{ else }}
             <li class="nav-item{{ if .IsHome }} active{{ end }}">
-               <a class="nav-link" href="{{ "/" | absLangURL }}">{{ i18n "home" }}</a>
+               {{ if eq .Lang "en" }}
+               <a class="nav-link" href="/en">
+               {{ else }}
+               <a class="nav-link" href="{{ .Site.BaseURL | absLangURL }}">
+               {{ end }}
+                  {{ i18n "home" }}
+               </a>
             </li>
                {{ range where (where .Site.RegularPages "Type" "==" "page") ".Params.weight" ">=" 1 }}
                   {{ $permalinkURL := .Permalink | absLangURL }}
@@ -33,5 +32,16 @@
             {{ end }}
          </ul>
       </div>
+      <a class="btn btn-primary float-right" id="toggleBooker" href="#">
+         {{ i18n "bookNow"}}
+      </a>
    </div>
 </nav>
+
+<div class="floating-widget d-none" id="floatingWidget">
+    <div class="floating-widget-container">
+       <div class="container">
+          <div id="rvm-booker-container" class="itm-booker itm-booker-horizontal"></div>
+       </div>
+    </div>
+</div>

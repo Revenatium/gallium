@@ -9,6 +9,8 @@
 // see: node_modules/bootstrap/scss/bootstrap.scss
 @import 'source/scss/vendor/bootstrap';
 
+@import 'source/scss/components/icons';
+
 //theme styles
 @import 'source/scss/components/navbar';
 @import 'source/scss/components/top-bar';

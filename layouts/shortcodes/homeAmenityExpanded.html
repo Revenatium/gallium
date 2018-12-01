@@ -1,0 +1,12 @@
+{{ $base := .Get "base" }}
+{{ $path := .Get "path" }}
+<div class="container">
+   <div class="row home-amenity-expanded page-item">
+      <div class="col-md-5 page-item-img" style="background-image: url({{print $base "f_auto,w_800,h_600,c_fill/" $path }})">
+      </div>
+      <div class="col-md-7 page-item-txt">
+         <h2>{{.Get "title"}}</h2>
+         {{ .Inner }}
+      </div>
+   </div>
+</div>

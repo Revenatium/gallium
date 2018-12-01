@@ -17,9 +17,9 @@
    </p>
 
    {{ if .Site.Params.Social }}
-   <ul class="clearfix social-media">
+   <ul class="list-inline social-media">
    {{ range .Site.Params.Social }}
-    <li><a href="{{ .url }}" target="_blank"><span class="fa fa-{{ .icon }}"></span></a></li>
+    <li class="list-inline-item"><a href="{{ .url }}" target="_blank"><span class="fa fa-{{ .icon }}"></span></a></li>
    {{ end }}
    </ul>
    {{ end }}

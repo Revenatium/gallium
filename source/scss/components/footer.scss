@@ -1,27 +1,27 @@
 .footer {
 	font-size: 90%;
-    padding: 15px 0;
-    background-color: $footer-bgcolor;
-    color: $footer-txtcolor;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    margin-top: 40px;
+   padding: 15px 0;
+   background-color: $footer-bgcolor;
+   color: $footer-txtcolor;
+   padding-top: 40px;
+   padding-bottom: 40px;
+   margin-top: 40px;
+   text-align: center;
 
-    a {
-    	color: $footer-linkcolor;
-    }
+   a {
+   color: $footer-linkcolor;
+   }
 }
 
-.social-media {
-    list-style: none;
-    padding-left: 0;
-
-    &>li>a {
-	    float: left;
-	    color: $footer-linkcolor;
-	    font-size: 160%;
-	    margin-right: .5em;
-    }
+.social-media a{
+   font-size: 160%;
+   margin-right: 1rem;
+   background-color: $footer-icon-bgcolor;
+   color: $footer-icon-color;
+   width: 2em;
+   line-height: 2em;
+   display: block;
+   border-radius: 5px;
 }
 
 .nav-footer {

@@ -9,22 +9,22 @@ import './jquery.magnific-popup';
 import './jquery.validate';
 
 $(document).ready(function($){
-   $( "#toggleBooker" ).click(function(e) {
+   $( ".toggleBooker" ).click(function(e) {
       e.preventDefault();
       if ($( "#floatingWidget" ).hasClass("d-none")) {
          $( "#floatingWidget" ).removeClass( "d-none" );
+         $('#sticky-wrapper').css( "height", "auto");
       } else {
          $( "#floatingWidget" ).addClass( "d-none" );
          $('#sticky-wrapper').css( "height", "auto");
       }
    });
+   $(".navbar-toggler").click(function(){
+      $('#sticky-wrapper').css( "height", "auto");
+   });
 
    window.applyStickyHeader = function(){
-      if(window.innerWidth >= 768){
-         $('.header').sticky({topSpacing:0});
-      }else{
-         $('.header').unstick();
-      }
+      $('.itm-nav-container').sticky({topSpacing:0});
    }
 
    $('.photo-gallery').each(function(){
@@ -52,10 +52,6 @@ $(document).ready(function($){
 
    $('.contact-form').validate({
       messages: window.formMessages
-   });
-
-   $(window).resize(function() {
-      window.applyStickyHeader();
    });
 
    window.applyStickyHeader();

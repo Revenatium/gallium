@@ -53,3 +53,21 @@ label.error {
     overflow-y: auto;
   }
 }
+.home-sidebar{
+   @media (min-width: 768px) {
+      margin-top: -350px;
+      z-index: 3;
+   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   @if variable-exists(title-font-family){
+      font-family: $title-font-family, sans-serif;
+   }
+	font-weight: normal;
+}

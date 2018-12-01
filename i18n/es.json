@@ -118,5 +118,9 @@
    {
       "id": "roomsUri",
       "translation": "habitaciones"
+   },
+   {
+      "id": "more",
+      "translation": "Más"
    }
 ]

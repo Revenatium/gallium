@@ -1,15 +1,15 @@
 .listItem {
     margin: 20px 0 40px 0;
     background-color: #f9f9f9;
+    border: 1px solid #ddd;
 
     .listItem-info {
     	padding-top: 20px;
-    	padding-bottom: 20px;
+       padding-bottom: 20px;
     }
 
     .listItem-details {
     	text-align: center;
-    	border: 1px solid #f9f9f9;
     	background-color: #fff;
 
     	&>div {
@@ -52,6 +52,7 @@
 }
 
 .list-single .listItem {
+   border: none;
     .listItem-info {
         padding: 20px;
         .btn-primary {

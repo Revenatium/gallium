@@ -1,47 +1,84 @@
-<nav class="navbar navbar-toggleable-md">
-   <div class="container">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="fa fa-bars"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-         <ul class="navbar-nav mr-auto">
-            {{- $currentURL := .URL | absLangURL -}}
-            {{ if .Site.Params.custom_navbar }}
-               {{ range .Site.Menus.main }}
-                  {{ $menuURL := .URL | absLangURL }}
-            <li class="nav-item{{ if eq $menuURL $currentURL }} active{{ end }}">
-               <a class="nav-link" href="{{.URL | absURL }}">{{ .Name }}</a>
-            </li>
-               {{ end }}
-            {{ else }}
-            <li class="nav-item{{ if .IsHome }} active{{ end }}">
-               {{ if eq .Lang "en" }}
-               <a class="nav-link" href="/en">
+<div class="itm-nav-container">
+   <nav class="navbar navbar-expand-lg">
+      <div class="container">
+         {{ if eq .Lang "en" }}
+         <a class="navbar-brand" href="/en">
+         {{ else }}
+         <a class="navbar-brand" href="{{ .Site.BaseURL | absLangURL }}">
+         {{ end }}
+         {{ if .Site.Params.logoURL }}
+            <img src="{{ .Site.Params.logoURL }}" alt="{{ .Site.Title | safeHTML }}">
+         {{ else }}
+            {{ .Site.Title | safeHTML }}
+         {{ end }}
+         </a>
+         
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="fa fa-bars"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+               {{- $currentURL := .URL | absLangURL -}}
+               {{ if .Site.Params.custom_navbar }}
+                  {{ range .Site.Menus.main }}
+                     {{ $menuURL := .URL | absLangURL }}
+               <li class="nav-item{{ if eq $menuURL $currentURL }} active{{ end }}">
+                  <a class="nav-link" href="{{.URL | absURL }}">{{ .Name }}</a>
+               </li>
+                  {{ end }}
                {{ else }}
-               <a class="nav-link" href="{{ .Site.BaseURL | absLangURL }}">
-               {{ end }}
-                  {{ i18n "home" }}
-               </a>
-            </li>
-               {{ range where (where .Site.RegularPages "Type" "==" "page") ".Params.weight" ">=" 1 }}
-                  {{ $permalinkURL := .Permalink | absLangURL }}
-            <li class="nav-item{{ if eq $permalinkURL $currentURL }} active{{ end }}">
-               <a class="nav-link" href="{{ .Permalink }}">{{ .Title }}</a>
-            </li>
-               {{ end }}
-            {{ end }}
-         </ul>
-      </div>
-      <a class="btn btn-primary float-right" id="toggleBooker" href="#">
-         {{ i18n "bookNow"}}
-      </a>
-   </div>
-</nav>
+               <li class="nav-item{{ if .IsHome }} active{{ end }}">
+                  {{ if eq .Lang "en" }}
+                  <a class="nav-link" href="/en">
+                  {{ else }}
+                  <a class="nav-link" href="{{ .Site.BaseURL | absLangURL }}">
+                  {{ end }}
+                     {{ i18n "home" }}
+                  </a>
+               </li>
 
-<div class="floating-widget d-none" id="floatingWidget">
-    <div class="floating-widget-container">
-       <div class="container">
-          <div id="rvm-booker-container" class="itm-booker itm-booker-horizontal"></div>
-       </div>
-    </div>
+               {{ $menuItems := where (where .Site.RegularPages "Type" "==" "page") ".Params.weight" ">=" 1}}
+               {{ if gt $menuItems 4 }}
+                  {{ range first 3 $menuItems }}
+                     {{ $permalinkURL := .Permalink | absLangURL }}
+                     <li class="nav-item{{ if eq $permalinkURL $currentURL }} active{{ end }}">
+                        <a class="nav-link" href="{{ .Permalink }}">{{ .Title }}</a>
+                     </li>
+                  {{ end }}
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">{{ i18n "more" }}</a>
+                        <div class="dropdown-menu">
+                           {{ range after 3 $menuItems }}
+                              <a class="dropdown-item" href="{{ .Permalink }}" >{{ .Title }}</a>
+                           {{ end }}
+                        </div>
+                     </li>
+               {{ end }}
+               {{ if le $menuItems 4 }}
+                  {{ range $menuItems }}
+                     {{ $permalinkURL := .Permalink | absLangURL }}
+                     <li class="nav-item{{ if eq $permalinkURL $currentURL }} active{{ end }}">
+                        <a class="nav-link" href="{{ .Permalink }}">{{ .Title }}</a>
+                     </li>
+                  {{ end }}
+               {{ end }}
+               {{ end }}
+            </ul>
+            <a class="btn btn-primary float-right d-none d-lg-block toggleBooker" href="#">
+               {{ i18n "bookNow"}}
+            </a>
+         </div>
+         <a class="btn btn-primary btn-reserve-sm d-lg-none toggleBooker" href="#">
+            {{ i18n "bookNow"}}
+         </a>
+      </div>
+   </nav>
+
+   <div class="floating-widget d-none" id="floatingWidget">
+      <div class="floating-widget-container">
+         <div class="container">
+            <div id="rvm-booker-container" class="itm-booker itm-booker-horizontal"></div>
+         </div>
+      </div>
+   </div>
 </div>

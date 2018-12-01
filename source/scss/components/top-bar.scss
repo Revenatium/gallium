@@ -1,19 +1,39 @@
 .top-bar {
-	font-size: 90%;
-    padding: 10px 0;
-    background-color: $top-bar-bgcolor;
-    color: $top-bar-txtcolor;
+   font-size: 90%;
+   padding: 10px 0;
+   background-color: $top-bar-bgcolor;
+   color: $top-bar-txtcolor;
 
-    .float-right > a,
-    .float-left > a {
-    	color: $top-bar-linkcolor;
-    }
+   .top-bar-contact > a {
+      color: $top-bar-txtcolor;
+   }
 
-    .hotel-phone {
-    	margin-right: 1em;
-    }
+   .top-bar-lang > a,
+   .nav-top a {
+      color: $top-bar-linkcolor;
+      text-transform: uppercase;
+      font-size: 13px;
+      padding: 0 15px;
+      @media (max-width: 576px) {
+         font-size: 12px;
+         padding: 0 3px;
+      }
+   }
+
+   .hotel-phone {
+      margin-right: 1em;
+   }
 }
-.top-bar-contact a, 
-.top-bar-contact span {
-    white-space: nowrap;
+
+.top-bar-contact {
+   display: none;
+   a, span {
+      white-space: nowrap;
+   }
+   @media (min-width: 992px) {
+      display: block;
+      padding-left: $navbar-left-margin;
+      padding-top: 0;
+   }
+
 }

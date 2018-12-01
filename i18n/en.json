@@ -118,5 +118,9 @@
    {
       "id": "roomsUri",
       "translation": "rooms"
+   },
+   {
+      "id": "more",
+      "translation": "More"
    }
 ]

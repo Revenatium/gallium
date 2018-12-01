@@ -1,21 +1,43 @@
-$brand-color: #333;
-$brand-color-secondary: #555;
+$white-theme: #fff;
+$dark-theme: #333;
+$brand-color: #7d2926;// #333;
+$brand-color-secondary: #daa128;// #555;
 
-$top-bar-bgcolor: $brand-color-secondary;
-$top-bar-txtcolor: rgba(255,255,255,0.8);
-$top-bar-linkcolor: rgba(255,255,255,0.8);
-
-$footer-bgcolor: $brand-color-secondary;
-$footer-txtcolor: #ddd;
-$footer-linkcolor: #fff;
+// Topbar
+$top-bar-bgcolor: #f3f3f3;
+$top-bar-txtcolor: #999;
+$top-bar-linkcolor: $brand-color-secondary;
 
 // Navbar
-$navbar-padding-y:            15px;
-$navbar-bgcolor:              $brand-color;
-$navbar-item-color:           #eee;
-$navbar-item-hover-bgcolor:   lighten($navbar-bgcolor,5%);
-$navbar-item-hover-color:     #eee;
-$navbar-item-active-bgcolor:  transparent;
+$navbar-left-margin:          0px;
+$navbar-bgcolor:              $white-theme;
+$navbar-item-color:           $brand-color;
+
+$navbar-item-hover-bgcolor:   darken($brand-color,5%);
+$navbar-item-hover-color:     #fff;
+
+$navbar-item-active-bgcolor:  $brand-color;
 $navbar-item-active-color:    #fff;
 
+$promo-bgcolor:               #333;
+$promo-txtcolor:               #fff;
+
+$floating-widget-bgcolor:     #eee;
 $itm-font-version: '233op8';
+
+// Footer
+$footer-bgcolor: #f3f3f3;
+$footer-txtcolor: #999;
+$footer-linkcolor: $brand-color;
+$footer-icon-bgcolor: $brand-color-secondary;
+$footer-icon-color: #fff;
+
+// Fonts (cargadas previamente)
+//$title-font-family: 'Raleway';
+//$nav-link-font-family: 'Roboto Condensed';
+
+//override bootstrap variables
+//$primary:                     #daa128;
+$link-color:                  #0366d6;
+$h2-font-size:                26px;
+$h3-font-size:                22px;

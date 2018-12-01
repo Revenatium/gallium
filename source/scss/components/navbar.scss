@@ -1,14 +1,26 @@
 header{
-   z-index: 10 !important;
+   z-index: 4 !important;
    position: relative;
 
-   >.navbar {
+   .navbar {
       z-index: 3;
       background-color: $navbar-bgcolor;
+      padding: 0 1rem;
+      box-shadow: 0 3px 3px rgba(0,0,0,.30); 
 
       .navbar-nav {
          .nav-link {
+            @if variable-exists(nav-link-font-family){
+               font-family: $nav-link-font-family, sans-serif;
+            }
             color: $navbar-item-color;
+            font-size: 1.1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            @media(min-width: 992px){
+               padding-top: 1.3em;
+               padding-bottom: 1.3em;
+            }
          }
          .nav-link:focus, 
          .nav-link:hover {
@@ -26,6 +38,7 @@ header{
       .navbar-toggler {
          border-color: $navbar-item-color;
          color: $navbar-item-color;
+         padding: 0.45rem 0.75rem;
 
          &:hover,
          &:focus {
@@ -33,5 +46,44 @@ header{
             color: $navbar-item-hover-color;
          }
       }
+      .container{
+         position: relative;
+      }
+   }
+   .navbar-brand {
+      //position: absolute;
+      min-height: 55px;
+      z-index: 4;
+   }
+   .btn-reserve-sm {
+      position: absolute;
+      top: 9px;
+      right: 59px;
+   }
+}
+
+.is-sticky {
+   .top-bar {
+      padding: 0;
+   }
+   .top-bar-contact,.top-bar-lang,.nav-top {
+      display: none;
+   }
+}
+.floating-widget-container {
+   padding-top: 20px;
+   background-color: $floating-widget-bgcolor;
+   z-index: 2;
+   .itm-booker:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -25px;
+      right: 30px;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid #e1dfd5;
    }
 }

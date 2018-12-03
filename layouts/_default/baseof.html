@@ -3,7 +3,7 @@
 
    <head>
       {{ partial "head-meta.html" . }}
-
+      {{ partial "head-custom.html" . }}
       {{ block "schema-dot-org" . }}
       <!-- schema.org metadata differs for Nodes and Pages -->
       {{ end }}
@@ -46,8 +46,6 @@
       {{ template "_internal/google_analytics_async.html" . }}
       
       {{ partial "googleTagManagerHeader.html" . }}
-
-      {{ partial "head-custom.html" . }}
    </head>
 
    <body>

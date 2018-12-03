@@ -24,6 +24,24 @@
 
 
       <style>{{ partial "build.css" | safeCSS }}</style>
+      {{if isset .Params "slider" }}
+         {{ $base := .Params.slider.base }}
+         {{ $items := split .Params.slider.pics ","}}
+         {{ $len := (len $items) }}
+      <style>
+         {{ range $index, $element := $items }}
+      .slider_bg_{{$index}}{background-image: url({{ print $base "f_auto,w_1200,h_600,c_fill/" $element }});}
+      @media (max-width: 425px){.slider_bg_{{$index}}{background-image: url({{ print $base "f_auto,w_425,c_fill/" $element }});}}
+         {{ end }}
+      </style>
+      {{ else }}
+         {{ $c_base := .Params.featured_image.base }}
+         {{ $c_element := .Params.featured_image.path }}
+      <style>
+         .slider_bg_featured{background-image: url({{  print $c_base "f_auto,w_1200,h_600,c_fill/" $c_element }});}
+         @media (max-width: 425px){.slider_bg_featured{background-image: url({{ print $c_base "f_auto,w_425,c_fill/" $c_element }});}}
+      </style>
+      {{ end }}
 
       {{ template "_internal/google_analytics_async.html" . }}
       
@@ -42,12 +60,11 @@
 
       {{if isset .Params "slider" }}
          <div id="itm-ap-slider" class="jumbotron carousel slide" data-ride="carousel">
-            {{ $base := .Params.slider.base }}
             {{ $items := split .Params.slider.pics ","}}
             {{ $len := (len $items) }}
             <div class="carousel-inner">
                {{ range $index, $element := $items }}
-               <div class="carousel-item{{ if (eq $index 0) }} active{{ end }}" style="background-image: url({{ print $base "q_auto:low,f_auto,w_1200,h_600,c_fill/" $element }});">
+               <div class="carousel-item{{ if (eq $index 0) }} active{{ end }} slider_bg_{{$index}}">
                </div>
                {{ end }}
             </div>
@@ -57,7 +74,7 @@
          </div>
       {{ else }}
          <div class="jumbotron {{if isset .Params "featured_image" }}page-banner{{end}}"
-         {{ if isset .Params "featured_image" }}style="background-image: url({{ .Params.featured_image.base}}q_auto:low,f_auto,w_1200,h_600,c_fill/{{ .Params.featured_image.path }});" {{ end }}>
+         {{ if isset .Params "featured_image" }}style="background-image: url({{ .Params.featured_image.base}}f_auto,w_1200,h_600,c_fill/{{ .Params.featured_image.path }});" {{ end }}>
 
             {{ partial "banner-content.html" . }}
 

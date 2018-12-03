@@ -2,11 +2,11 @@
 
 @font-face {
    font-family: 'icons';
-   src:  url('#{$fa-font-path}/icons.eot?#{$itm-font-version}');
-   src:  url('#{$fa-font-path}/icons.eot?#{$itm-font-version}#iefix') format('embedded-opentype'),
-     url('#{$fa-font-path}/icons.ttf?#{$itm-font-version}') format('truetype'),
-     url('#{$fa-font-path}/icons.woff?#{$itm-font-version}') format('woff'),
-     url('#{$fa-font-path}/icons.svg?#{$itm-font-version}#icons') format('svg');
+   src:  url('#{$fa-font-path}/icons.eot?v=#{$itm-font-version}');
+   src:  url('#{$fa-font-path}/icons.eot?v=#{$itm-font-version}#iefix') format('embedded-opentype'),
+     url('#{$fa-font-path}/icons.ttf?v=#{$itm-font-version}') format('truetype'),
+     url('#{$fa-font-path}/icons.woff?v=#{$itm-font-version}') format('woff'),
+     url('#{$fa-font-path}/icons.svg?v=#{$itm-font-version}#icons') format('svg');
    font-weight: normal;
    font-style: normal;
  }

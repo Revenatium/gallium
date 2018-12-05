@@ -38,8 +38,11 @@
                </li>
 
                {{ $menuItems := where (where .Site.RegularPages "Type" "==" "page") ".Params.weight" ">=" 1}}
-               {{ if gt $menuItems 4 }}
-                  {{ range first 3 $menuItems }}
+               {{ $maxMenuItems := .Site.Params.maxMenuItems | default 4 }}
+               {{ $menuItemsLimit := sub $maxMenuItems 1 }}
+
+               {{ if gt $menuItems $maxMenuItems }}
+                  {{ range first $menuItemsLimit $menuItems }}
                      {{ $permalinkURL := .Permalink | absLangURL }}
                      <li class="nav-item{{ if eq $permalinkURL $currentURL }} active{{ end }}">
                         <a class="nav-link" href="{{ .Permalink }}">{{ .Title }}</a>
@@ -48,13 +51,13 @@
                      <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown">{{ i18n "more" }}</a>
                         <div class="dropdown-menu">
-                           {{ range after 3 $menuItems }}
+                           {{ range after $menuItemsLimit $menuItems }}
                               <a class="dropdown-item" href="{{ .Permalink }}" >{{ .Title }}</a>
                            {{ end }}
                         </div>
                      </li>
                {{ end }}
-               {{ if le $menuItems 4 }}
+               {{ if le $menuItems $maxMenuItems }}
                   {{ range $menuItems }}
                      {{ $permalinkURL := .Permalink | absLangURL }}
                      <li class="nav-item{{ if eq $permalinkURL $currentURL }} active{{ end }}">

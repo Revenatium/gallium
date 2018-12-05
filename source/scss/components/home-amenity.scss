@@ -28,40 +28,15 @@
 }
 .btn-list-amenities {
    margin-top: 20px;
-   .btn {
-      cursor: default !important;
+   .btn{
       text-align: left;
       margin-bottom: 20px;
       vertical-align: middle;
+      background-color: #FFF;
       color: #444;
-      background-color: #fff;
-      border-color: $brand-color-secondary;
       .icon {
          font-size: 1.6em;
-         vertical-align: inherit;
+         vertical-align: middle;
       }
    }
-    
 }
-
-.page-item {
-   background-color: #eee;
-   margin-bottom: 20px;
- }
- .page-item-img {
-   background-position: center;
-   background-size: cover;
-   min-height: 200px;
- }
- .page-item img {
-   max-width: calc(100% + 15px);
-   margin-left: -15px;
-   margin-right: -15px;
- }
- .page-item h2 {
-   margin-top: 20px; 
-   margin-bottom: 15px;
- }
- .page-item .label {
-   margin-bottom: 15px;
- }

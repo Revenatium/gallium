@@ -1,5 +1,11 @@
 .listItem-room {
-    .room-amenities ul {
-        text-align: left;
-    }
+   .room-amenities ul {
+      text-align: left;
+      li{
+         margin: 10px 0;
+      }
+      .icon {
+         font-size: 150%;
+      }
+   }
 }

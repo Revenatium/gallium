@@ -54,6 +54,9 @@ header{
       //position: absolute;
       min-height: 55px;
       z-index: 4;
+      img{
+         max-height: 45px;
+      }
    }
    .btn-reserve-sm {
       position: absolute;

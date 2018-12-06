@@ -6,7 +6,13 @@
          {{ else }}
          <a class="navbar-brand" href="{{ .Site.BaseURL | absLangURL }}">
          {{ end }}
-         {{ if .Site.Params.logoURL }}
+         {{ if (and .Site.Params.logoBase .Site.Params.logoPath)}}
+            <picture>
+               <source media="(max-width: 320px)" srcset="{{ .Site.Params.logoBase }}q_auto,w_85,h_45,dpr_2.0,c_pad/{{ .Site.Params.logoPath }}" />
+               <source media="(max-width: 425px)" srcset="{{ .Site.Params.logoBase }}q_auto,w_140,h_45,dpr_2.0,c_pad/{{ .Site.Params.logoPath }}" />
+               <img src="{{ .Site.Params.logoBase }}q_auto,h_45,dpr_2.0/{{ .Site.Params.logoPath }}" />
+            </picture>
+         {{ else if .Site.Params.logoURL }}
             <img src="{{ .Site.Params.logoURL }}" alt="{{ .Site.Title | safeHTML }}">
          {{ else }}
             {{ .Site.Title | safeHTML }}

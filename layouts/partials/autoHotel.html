@@ -1,0 +1,25 @@
+{{ $base := .imageBase }}
+{{ $bucket := .imageBucket }}
+{{ $bookingEngineURL := .bookingEngineURL }}
+
+{{ with .hotel}}
+<div class="row listItem">
+   {{if .photos }}
+      {{ $image := index .photos 0 }}
+   <div class="listItem-pic" style="background-image: url( {{ print $base "f_auto,h_400,c_fill/" $bucket "/" $image.path }})">
+   </div>
+   {{ else }}
+   <div class="listItem-pic listItem-pic--empty">
+   </div>
+   {{ end}}
+   <div class="listItem-info">
+      {{ with .name }}
+      <h2 class="listItem-title">{{ . | markdownify }}</h2>
+      {{ end}}
+      
+      <div class="listItem-actions">
+         <a href="{{ $bookingEngineURL }}" class="btn btn-primary">{{ i18n "bookNow"}}</a>
+      </div>
+   </div>
+</div>
+{{ end }}

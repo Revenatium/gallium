@@ -1,0 +1,19 @@
+{{ define "title" }}
+   {{ .Title | markdownify }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<div class="list-items">
+   {{ $hotelsUrl := .Site.Params.hotelsURL }}
+   {{ $hotels := getJSON $hotelsUrl }}
+   {{ range first 10 (sort $hotels "id" "desc") }}
+      {{ partial "autoHotel" (dict "hotel" . "bookingEngineURL" $.Site.Params.bookingEngineURL "imageBase" $.Site.Params.imageBase "imageBucket" $.Site.Params.imageBucket) }}
+   {{ end }}
+</div>
+<div class="row">
+   <div class="col-sm-12">
+      {{ .Content }}
+   </div>
+</div>
+
+{{ end }}

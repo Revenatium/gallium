@@ -112,6 +112,9 @@
       color: $brand-color;
     }
 }
+.DateRangePicker_picker {
+  z-index: 5 !important;
+}
 
 @media (min-width: 576px) {
    .jumbotron {
